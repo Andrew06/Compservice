@@ -1,0 +1,150 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = #1052#1072#1088#1082#1080' '#1090#1077#1093#1085#1080#1082#1080
+  ClientHeight = 350
+  ClientWidth = 611
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 0
+    Top = 304
+    Width = 610
+    Height = 25
+    Alignment = taCenter
+    AutoSize = False
+    Caption = #1055#1054#1048#1057#1050' '#1052#1040#1056#1050#1048' '#1055#1054' '#1053#1040#1048#1052#1045#1053#1054#1042#1040#1053#1048#1070
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 256
+    Width = 610
+    Height = 51
+    DataSource = DataModule6.DSMarka
+    TabOrder = 0
+  end
+  object DBCtrlGrid1: TDBCtrlGrid
+    Left = 0
+    Top = -5
+    Width = 609
+    Height = 262
+    DataSource = DataModule6.DSMarka
+    PanelHeight = 262
+    PanelWidth = 592
+    TabOrder = 1
+    RowCount = 1
+    object Label2: TLabel
+      Left = 1
+      Top = 5
+      Width = 57
+      Height = 18
+      AutoSize = False
+      Caption = #1050#1054#1044
+      Color = clBlack
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label3: TLabel
+      Left = 56
+      Top = 5
+      Width = 577
+      Height = 18
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #1053#1040#1048#1052#1045#1053#1054#1042#1040#1053#1048#1045' '#1052#1040#1056#1050#1048
+      Color = clBlack
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label4: TLabel
+      Left = 0
+      Top = 51
+      Width = 593
+      Height = 18
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #1054#1055#1048#1057#1040#1053#1048#1045
+      Color = clBlack
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object DBEdit1: TDBEdit
+      Left = 0
+      Top = 22
+      Width = 58
+      Height = 28
+      AutoSize = False
+      BevelOuter = bvRaised
+      BevelKind = bkFlat
+      DataField = #1050#1086#1076#1084#1072#1088#1082#1080
+      DataSource = DataModule6.DSMarka
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 56
+      Top = 22
+      Width = 538
+      Height = 28
+      AutoSize = False
+      BevelOuter = bvRaised
+      BevelKind = bkFlat
+      DataField = #1052#1072#1088#1082#1072#1090#1077#1093#1085#1080#1082#1080
+      DataSource = DataModule6.DSMarka
+      TabOrder = 1
+    end
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 0
+    Top = 329
+    Width = 610
+    Height = 21
+    KeyField = #1052#1072#1088#1082#1072#1090#1077#1093#1085#1080#1082#1080
+    ListField = #1052#1072#1088#1082#1072#1090#1077#1093#1085#1080#1082#1080
+    ListSource = DataModule6.DSMarka
+    TabOrder = 2
+  end
+  object DBMemo1: TDBMemo
+    Left = 0
+    Top = 64
+    Width = 593
+    Height = 193
+    DataField = #1054#1087#1080#1089#1072#1085#1080#1077
+    DataSource = DataModule6.DSMarka
+    TabOrder = 3
+  end
+end

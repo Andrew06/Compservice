@@ -28,6 +28,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure N1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +55,16 @@ procedure TForm7.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   DataModule6.ADOTableRashod.Cancel;
   N1.Visible:=False;
+end;
+
+procedure TForm7.FormCreate(Sender: TObject);
+begin
+  DataModule6.FDQuery1.Open;
+end;
+
+procedure TForm7.FormShow(Sender: TObject);
+begin
+  DataModule6.FDQuery1.Open;
 end;
 
 procedure TForm7.N1Click(Sender: TObject);

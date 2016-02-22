@@ -15,6 +15,8 @@ object Form7: TForm7
   Position = poDesktopCenter
   OnActivate = FormActivate
   OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -182,8 +184,8 @@ object Form7: TForm7
     Top = 344
     Width = 570
     Height = 21
-    KeyField = #1048#1084#1103#1084#1072#1090#1077#1088#1080#1072#1083#1072
-    ListField = #1048#1084#1103#1084#1072#1090#1077#1088#1080#1072#1083#1072
+    KeyField = #1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072
+    ListField = #1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072
     ListSource = DataModule6.DSMat
     TabOrder = 2
   end
@@ -192,7 +194,7 @@ object Form7: TForm7
     Top = 19
     Width = 570
     Height = 21
-    KeyField = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+    KeyField = #1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080
     ListField = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
     ListSource = DataModule6.DSCat
     TabOrder = 3

@@ -4,7 +4,14 @@ interface
 
 uses
   Winapi.Windows, Vcl.Dialogs, System.SysUtils, System.Variants, System.Classes, Winapi.Messages, Data.DB, Data.Win.ADODB, Word2000,
-  Vcl.OleServer, IniFiles, Forms;
+  Vcl.OleServer, IniFiles, Forms, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSAcc,
+  FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Error, FireDAC.VCLUI.Login,
+  FireDAC.VCLUI.Async, FireDAC.VCLUI.Script, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Comp.UI,
+  FireDAC.Phys.ODBCBase;
 
 type
   TDataModule6 = class(TDataModule)
@@ -101,6 +108,16 @@ type
     ADOTableZakaz—ÛÏÏ‡: TFloatField;
     ADOQSumRashod—ÛÏÏ‡: TFloatField;
     ADOQSumRemontÕÓÏÂ«‡Í‡Á‡: TIntegerField;
+    FDConnection1: TFDConnection;
+    FDGUIxErrorDialog1: TFDGUIxErrorDialog;
+    FDGUIxLoginDialog1: TFDGUIxLoginDialog;
+    FDGUIxAsyncExecuteDialog1: TFDGUIxAsyncExecuteDialog;
+    FDGUIxScriptDialog1: TFDGUIxScriptDialog;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDQuery1: TFDQuery;
+    FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
+    FDQuery1 Ó‰ ‡ÚÂ„ÓËË: TFDAutoIncField;
+    FDQuery1Õ‡ËÏÂÌÓ‚‡ÌËÂ: TWideStringField;
     procedure ADOQSumRashodCalcFields(DataSet: TDataSet);
     procedure ADOTableMatAfterInsert(DataSet: TDataSet);
     procedure ADOTableRashodAfterInsert(DataSet: TDataSet);
@@ -139,13 +156,12 @@ begin
     ADOConnection1.Close;
   F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
   DBPath:=f.ReadString('Section_DBPath','Path', '');
-  ADOConnection1.ConnectionString:='Provider=Microsoft.ACE.OLEDB.12.0;User ID=Admin;'+
-  'Data Source='+DBPath+'Database.accdb;Mode=Share Deny None;Jet OLEDB:System database="";'+
-  'Jet OLEDB:Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=6;'+
-  'Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;'+
-  'Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password="";'+
-  'Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;'+
-  'Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;';
+  Datamodule6.ADOConnection1.ConnectionString:='Provider=Microsoft.ACE.OLEDB.12.0;Data Source='+DBPath+'Database.accdb;Persist Security Info=False ';
+  if fdconnection1.Connected then
+    fdconnection1.Close;
+  F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
+  DBPath:=f.ReadString('Section_DBPath','Path', '');
+  fdconnection1.ConnectionString:='DriverID=MSAcc; UserName=Admin; Database='+DBPath+'Database.accdb; ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTimeout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes';
 end;
 
 procedure TDataModule6.ADOQSumRashodCalcFields(DataSet: TDataSet);

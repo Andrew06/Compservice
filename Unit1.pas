@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.Buttons,
   Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ImgList, Data.DB,
-  Data.Win.ADODB, IniFiles, Vcl.Mask, System.ImageList, Vcl.ComCtrls;
+  Data.Win.ADODB, IniFiles, Vcl.Mask, System.ImageList, Vcl.ComCtrls,
+  System.Win.TaskbarCore, Vcl.Taskbar, Vcl.JumpList;
 
 type
   TForm1 = class(TForm)
@@ -78,6 +79,13 @@ type
     N31: TMenuItem;
     StatusBar1: TStatusBar;
     Timer2: TTimer;
+    N32: TMenuItem;
+    N33: TMenuItem;
+    Taskbar1: TTaskbar;
+    TrayIcon1: TTrayIcon;
+    JumpList1: TJumpList;
+    PopupMenu1: TPopupMenu;
+    N34: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -125,6 +133,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure N30Click(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
+    procedure Taskbar1ThumbButtonClick(Sender: TObject; AButtonID: Integer);
+    procedure N34Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -327,7 +337,26 @@ begin
   finally
     F.Free;
   end;
-  Datamodule6.ADOTableCat.Active:= true;
+  if Datamodule6.FDConnection1.Connected then
+    Datamodule6.FDConnection1.Close;
+  F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
+  DBPath:=f.ReadString('Section_DBPath','Path', '');
+  try
+    if DBPath='' then
+      if Open_DB.Execute then
+        begin
+          DBPath:=ExtractFilePath(Form1.Open_DB.FileName);
+          F.WriteString('Section_DBPath','Path',DBPath);
+          Datamodule6.FDConnection1.Close;
+          Datamodule6.fdconnection1.ConnectionString:='DriverID=MSacc; UserName=Admin; Database='+DBPath+'Database.accdb;';
+          Datamodule6.FDConnection1.Open;
+         end;
+  finally
+    F.Free;
+ end;
+  Datamodule6.FDQuery1.Active:= true;
+  DataModule6.FDQuery1.Open;
+//  Datamodule6.ADOTableCat.Active:= true;
   Datamodule6.ADOTableMat.Active:= true;
   Datamodule6.ADOTableVid.Active:= true;
   Datamodule6.ADOTableMarka.Active:= true;
@@ -693,6 +722,11 @@ begin
   Application.Terminate;
 end;
 
+procedure TForm1.N34Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
 procedure TForm1.N4Click(Sender: TObject);
 begin
   Form2.ShowModal;
@@ -721,6 +755,11 @@ end;
 procedure TForm1.N9Click(Sender: TObject);
 begin
   Form8.ShowModal;
+end;
+
+procedure TForm1.Taskbar1ThumbButtonClick(Sender: TObject; AButtonID: Integer);
+begin
+  Application.Terminate;
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);

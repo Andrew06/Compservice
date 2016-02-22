@@ -1,6 +1,6 @@
 ﻿object DataModule6: TDataModule6
   OldCreateOrder = False
-  Height = 512
+  Height = 542
   Width = 722
   object ADOConnection1: TADOConnection
     LoginPrompt = False
@@ -71,7 +71,7 @@
     end
   end
   object DSCat: TDataSource
-    DataSet = ADOTableCat
+    DataSet = FDQuery1
     Left = 112
     Top = 72
   end
@@ -495,5 +495,71 @@
       FieldName = #1057#1091#1084#1084#1072
       Calculated = True
     end
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=E:\'#1044#1086#1082#1091#1084#1077#1085#1090#1099'\'#1040#1085#1076#1088#1077#1081'\'#1091#1095#1077#1073#1072'\'#1044#1080#1087#1083#1086#1084'\Compservice\Database.a' +
+        'ccdb'
+      'User_Name=admin'
+      
+        'ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTi' +
+        'meout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes'
+      'StringFormat=Unicode'
+      'DriverID=MSAcc')
+    Connected = True
+    LoginDialog = FDGUIxLoginDialog1
+    LoginPrompt = False
+    Left = 152
+    Top = 8
+  end
+  object FDGUIxErrorDialog1: TFDGUIxErrorDialog
+    Provider = 'Forms'
+    Left = 48
+    Top = 488
+  end
+  object FDGUIxLoginDialog1: TFDGUIxLoginDialog
+    Provider = 'Forms'
+    Left = 152
+    Top = 488
+  end
+  object FDGUIxAsyncExecuteDialog1: TFDGUIxAsyncExecuteDialog
+    Provider = 'Forms'
+    Left = 280
+    Top = 488
+  end
+  object FDGUIxScriptDialog1: TFDGUIxScriptDialog
+    Provider = 'Forms'
+    Left = 408
+    Top = 488
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 512
+    Top = 488
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from '#1050#1072#1090#1077#1075#1086#1088#1080#1103)
+    Left = 416
+    Top = 216
+    object FDQuery1КодКатегории: TFDAutoIncField
+      FieldName = #1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080
+      Origin = '['#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDQuery1Наименование: TWideStringField
+      FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+      Origin = '['#1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077']'
+      Size = 15
+    end
+  end
+  object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
+    DriverID = 'MsAcc'
+    ODBCDriver = 'Microsoft Access Driver (*.mdb, *.accdb)'
+    Left = 504
+    Top = 240
   end
 end

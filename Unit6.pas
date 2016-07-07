@@ -114,10 +114,30 @@ type
     FDGUIxAsyncExecuteDialog1: TFDGUIxAsyncExecuteDialog;
     FDGUIxScriptDialog1: TFDGUIxScriptDialog;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDQuery1: TFDQuery;
+    CatQuery: TFDQuery;
     FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
-    FDQuery1КодКатегории: TFDAutoIncField;
-    FDQuery1Наименование: TWideStringField;
+    CatQueryКодКатегории: TFDAutoIncField;
+    CatQueryНаименование: TWideStringField;
+    MatQuery: TFDQuery;
+    MatQueryКодМатериала: TFDAutoIncField;
+    MatQueryКодКатегории: TIntegerField;
+    MatQueryИмяМатериала: TWideStringField;
+    MatQueryОписание: TWideMemoField;
+    MatQueryЦена: TCurrencyField;
+    MarkaQuery: TFDQuery;
+    MarkaQueryКодМарки: TFDAutoIncField;
+    MarkaQueryМаркаТехники: TWideStringField;
+    MarkaQueryОписание: TWideMemoField;
+    VidQuery: TFDQuery;
+    VidQueryКодВида: TFDAutoIncField;
+    VidQueryВидТехники: TWideStringField;
+    VidQueryОписание: TWideStringField;
+    ClientQuery: TFDQuery;
+    RabotaQuery: TFDQuery;
+    RabotaQueryКодРаботы: TFDAutoIncField;
+    RabotaQueryИмяРаботы: TWideStringField;
+    RabotaQueryОписание: TWideMemoField;
+    RabotaQueryЦенаРаботы: TCurrencyField;
     procedure ADOQSumRashodCalcFields(DataSet: TDataSet);
     procedure ADOTableMatAfterInsert(DataSet: TDataSet);
     procedure ADOTableRashodAfterInsert(DataSet: TDataSet);
@@ -167,13 +187,13 @@ end;
 procedure TDataModule6.ADOQSumRashodCalcFields(DataSet: TDataSet);
 begin
   ADOTableRashod.Open;
- ADOTableRashod.First;
- while not ADOTableRashod.Eof do
-  begin
-  ADOQSumRashodSumцена.Value:=ADOQSumRashodSumцена.Value + ADOTableRashodСумма.Value;
-  ADOTableRashod.Next;
-  end;
- ADOQSumRashodСумма.Value:=ADOQSumRashodSumцена.Value;
+  ADOTableRashod.First;
+  while not ADOTableRashod.Eof do
+    begin
+      ADOQSumRashodSumцена.Value:=ADOQSumRashodSumцена.Value + ADOTableRashodСумма.Value;
+      ADOTableRashod.Next;
+    end;
+  ADOQSumRashodСумма.Value:=ADOQSumRashodSumцена.Value;
 end;
 
 procedure TDataModule6.ADOQSumRemontCalcFields(DataSet: TDataSet);

@@ -1,139 +1,116 @@
 ﻿[DataModule6.ADOTableRabota]
-Coordinates=792,1,165,123
+Coordinates=792,1,195,146
 
 [DataModule6.ADOTableCat]
-Coordinates=595,1,147,87
+Coordinates=595,1,174,102
 LayerNames=NewLayer0
 
 [DBLookupComboBox2]
-Coordinates=792,935,127,33
+Coordinates=792,935,144,36
 Visible=True
 
 [DataModule6.ADOTableClient]
-Coordinates=595,551,159,159
+Coordinates=595,551,187,190
 
 [DataModule6.ADOQSumRashod]
-Coordinates=792,391,172,87
+Coordinates=792,391,202,102
 
 [DBMemo1]
-Coordinates=723,946,64,33
+Coordinates=723,946,75,36
 
 [DataModule6.DSRashod]
-Coordinates=385,161,133,33
-
-[DBCtrlGrid1]
-Coordinates=516,946,73,33
+Coordinates=385,161,156,36
 
 [MainMenu1]
-Coordinates=437,946,70,33
+Coordinates=437,946,81,36
 
 [DataModule6.DSMarka]
-Coordinates=595,107,125,33
+Coordinates=595,107,148,36
 
 [DataModule6.DSCat]
-Coordinates=38,465,112,33
+Coordinates=38,465,132,36
 
 [DataModule6.ADOTableRashod]
-Coordinates=245,626,168,195
+Coordinates=245,626,198,234
 
 [DataModule6.DSZakaz]
-Coordinates=414,605,124,33
+Coordinates=414,605,147,36
 
 [DataModule6.ADOTableMaster]
-Coordinates=385,463,164,123
-
-[DBEdit1]
-Coordinates=378,946,54,33
+Coordinates=385,463,193,146
 
 [DataModule6.ADOTableVid]
-Coordinates=29,322,147,105
+Coordinates=29,322,173,124
 
 [DBNavigator1]
-Coordinates=157,465,82,51
+Coordinates=157,465,94,58
 
 [DataModule6.DSRemont]
-Coordinates=178,1,133,33
-
-[Label5]
-Coordinates=792,795,46,51
+Coordinates=178,1,157,36
 
 [DataModule6.DSVid]
-Coordinates=595,231,111,33
+Coordinates=595,231,131,36
 
 [DataModule6.FDQuery1]
 Coordinates=792,725,130,51
 
-[DBLookupComboBox1]
-Coordinates=249,946,127,33
-
 [DataModule6.DSClient]
-Coordinates=595,729,124,33
-
-[Label1]
-Coordinates=792,865,46,51
+Coordinates=595,729,145,36
 
 [DataModule6.ADOTableMarka]
-Coordinates=178,161,160,105
+Coordinates=178,161,190,124
 
 [DataModule6.DSSumRemont]
-Coordinates=792,567,156,33
+Coordinates=792,567,183,36
 
 [DataModule6.ADOTableTexnika]
-Coordinates=66,626,169,177
+Coordinates=66,626,199,212
 
 [DataModule6.ADOQSumRemont]
-Coordinates=385,375,172,69
-
-[DBEdit2]
-Coordinates=190,946,54,33
-
-[Label4]
-Coordinates=792,655,46,51
+Coordinates=385,375,203,80
 
 [DataModule6.DSTexnika]
-Coordinates=595,355,133,33
+Coordinates=595,355,157,36
 
 [DataModule6.ADOTableMat]
-Coordinates=385,1,148,141
+Coordinates=385,1,175,168
 
 [DataModule6.ADOTableRemont]
-Coordinates=178,285,169,141
+Coordinates=178,285,199,168
 
 [DataModule6.DSMat]
-Coordinates=595,907,113,33
+Coordinates=595,907,133,36
 
 [DataModule6.DSRabota]
-Coordinates=246,465,130,33
+Coordinates=246,465,153,36
 
 [DataModule6.DSSumRashod]
-Coordinates=792,285,155,33
+Coordinates=792,285,182,36
 
 [N1]
-Coordinates=141,946,40,33
+Coordinates=141,946,40,36
 
 [Label2]
-Coordinates=792,497,46,51
+Coordinates=792,497,53,58
 
 [DataModule6.DSMaster]
-Coordinates=792,143,128,33
-
-[DBEdit3]
-Coordinates=82,946,54,33
-
-[Label3]
-Coordinates=17,626,46,51
-
-[Label6]
-Coordinates=546,626,46,51
+Coordinates=792,143,151,36
 
 [DataModule6.ADOTableZakaz]
-Coordinates=0,0,159,303
+Coordinates=0,0,189,366
 
 []
-Coordinates=1002,1,82,33
+Coordinates=516,946,84,36
+Visible=True
 
 [Module Settings]
 ModelLayerNames=NewLayer0
 ActiveLayerNames=
 EditingLayerName=
+
+[DataModule6.CatQuery]
+Coordinates=415,1,149,102
+
+[DataModule6.MatQuery]
+Coordinates=436,1009,151,212
 

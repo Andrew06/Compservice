@@ -24,6 +24,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure N1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +51,11 @@ procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   DataModule6.ADOTableZakaz.Close;
   N1.Visible:=False;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  Datamodule6.ClientQuery.Open;
 end;
 
 procedure TForm2.N1Click(Sender: TObject);

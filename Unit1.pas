@@ -354,13 +354,21 @@ begin
   finally
     F.Free;
  end;
-  Datamodule6.FDQuery1.Active:= true;
-  DataModule6.FDQuery1.Open;
+  Datamodule6.CatQuery.Active:= true;
+  DataModule6.CatQuery.Open;
+  Datamodule6.MatQuery.Active:= true;
+  DataModule6.MatQuery.Open;
+  Datamodule6.MarkaQuery.Active:= true;
+  DataModule6.MarkaQuery.Open;
+  Datamodule6.VidQuery.Active:= true;
+  DataModule6.VidQuery.Open;
+  Datamodule6.ClientQuery.Active:= true;
+  DataModule6.ClientQuery.Open;
 //  Datamodule6.ADOTableCat.Active:= true;
-  Datamodule6.ADOTableMat.Active:= true;
-  Datamodule6.ADOTableVid.Active:= true;
-  Datamodule6.ADOTableMarka.Active:= true;
-  Datamodule6.ADOTableClient.Active:= true;
+//  Datamodule6.ADOTableMat.Active:= true;
+//  Datamodule6.ADOTableVid.Active:= true;
+//  Datamodule6.ADOTableMarka.Active:= true;
+//  Datamodule6.ADOTableClient.Active:= true;
   Datamodule6.ADOTableRabota.Active:= true;
   Datamodule6.ADOTableMaster.Active:= true;
   Datamodule6.ADOTableTexnika.Active:= true;

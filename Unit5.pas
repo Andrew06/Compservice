@@ -10,15 +10,15 @@ uses
 type
   TForm5 = class(TForm)
     DBNavigator1: TDBNavigator;
-    DBCtrlGrid1: TDBCtrlGrid;
     Label1: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
+    DBMemo1: TDBMemo;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
+    Label4: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
-    DBMemo1: TDBMemo;
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +33,10 @@ implementation
 {$R *.dfm}
 
 uses Unit1, Unit2, Unit3, Unit4, Unit6, Unit7, Unit8;
+
+procedure TForm5.FormShow(Sender: TObject);
+begin
+  DataModule6.MarkaQuery.Open;
+end;
 
 end.

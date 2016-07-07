@@ -9,16 +9,16 @@ uses
 
 type
   TForm4 = class(TForm)
-    DBNavigator1: TDBNavigator;
-    DBCtrlGrid1: TDBCtrlGrid;
     DBEdit1: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBNavigator1: TDBNavigator;
+    Label3: TLabel;
     DBEdit2: TDBEdit;
+    DBMemo1: TDBMemo;
     Label1: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
-    DBMemo1: TDBMemo;
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +33,10 @@ implementation
 {$R *.dfm}
 
 uses Unit1, Unit2, Unit3, Unit5, Unit6, Unit7, Unit8;
+
+procedure TForm4.FormShow(Sender: TObject);
+begin
+  DataModule6.VidQuery.Open;
+end;
 
 end.

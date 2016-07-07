@@ -64,17 +64,17 @@ St1:=IntToStr(i);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,1).Range.InsertBefore(St1);
 St1:=DateToStr(Datamodule6.ADOTableZakazÄàòàÇàêàçà.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,2).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazÒåõíèêà.Value;
+St1:=string(Datamodule6.ADOTableZakazÒåõíèêà.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,3).Range.InsertBefore(St1);
 St1:=Datamodule6.ADOTableZakazÍîìåğÒåõíèêè.Value;
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,4).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazÊëèåíò.Value;
+St1:=string(Datamodule6.ADOTableZakazÊëèåíò.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,5).Range.InsertBefore(St1);
 if Datamodule6.ADOTableZakazÂûçîâ.Value=True then
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('ÄÀ')
 else
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('ÍÅÒ');
-St1:=Datamodule6.ADOTableZakazÌàñòåğ.Value;
+St1:=string(Datamodule6.ADOTableZakazÌàñòåğ.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,7).Range.InsertBefore(St1);
 St1:=DateToStr(Datamodule6.ADOTableZakazÄàòàÂûïîëíåíèÿ.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,8).Range.InsertBefore(St1);

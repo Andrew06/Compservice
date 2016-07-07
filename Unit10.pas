@@ -55,7 +55,7 @@ St2:=DateToStr(DateTimePicker2.Date);
 Datamodule6.WordDocument1.Tables.Item(1).Cell(4,2).Range.InsertBefore(St2);
 Datamodule6.ADOTableZakaz.Filter:='ДатаЗаказа>='+St1+' AND ДатаЗаказа<='+St2+' AND КодМастера='+IntToStr(Datamodule6.ADOTableMasterКодМастера.Value);
 Datamodule6.ADOTableZakaz.Filtered:=True;
-St1:=Datamodule6.ADOTableZakazМастер.Value;
+St1:=string(Datamodule6.ADOTableZakazМастер.Value);
 Datamodule6.WordDocument1.Tables.Item(1).Cell(5,2).Range.InsertBefore(St1);
 i:=1; Sum:=0;
 With Datamodule6.ADOTableZakaz do
@@ -67,17 +67,17 @@ St1:=IntToStr(i);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,1).Range.InsertBefore(St1);
 St1:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,2).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazТехника.Value;
+St1:=string(Datamodule6.ADOTableZakazТехника.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,3).Range.InsertBefore(St1);
 St1:=Datamodule6.ADOTableZakazНомерТехники.Value;
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,4).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazКлиент.Value;
+St1:=string(Datamodule6.ADOTableZakazКлиент.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,5).Range.InsertBefore(St1);
 if Datamodule6.ADOTableZakazВызов.Value=True then
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('ДА')
 else
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('НЕТ');
-St1:=Datamodule6.ADOTableZakazМастер.Value;
+St1:=string(Datamodule6.ADOTableZakazМастер.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,7).Range.InsertBefore(St1);
 St1:=DateToStr(Datamodule6.ADOTableZakazДатаВыполнения.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,8).Range.InsertBefore(St1);

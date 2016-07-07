@@ -71,27 +71,27 @@
     end
   end
   object DSCat: TDataSource
-    DataSet = FDQuery1
+    DataSet = CatQuery
     Left = 112
     Top = 72
   end
   object DSMat: TDataSource
-    DataSet = ADOTableMat
+    DataSet = MatQuery
     Left = 112
     Top = 128
   end
   object DSVid: TDataSource
-    DataSet = ADOTableVid
+    DataSet = VidQuery
     Left = 112
     Top = 184
   end
   object DSMarka: TDataSource
-    DataSet = ADOTableMarka
+    DataSet = MarkaQuery
     Left = 112
     Top = 240
   end
   object DSClient: TDataSource
-    DataSet = ADOTableClient
+    DataSet = ClientQuery
     Left = 112
     Top = 296
   end
@@ -538,19 +538,19 @@
     Left = 512
     Top = 488
   end
-  object FDQuery1: TFDQuery
+  object CatQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from '#1050#1072#1090#1077#1075#1086#1088#1080#1103)
-    Left = 416
-    Top = 216
-    object FDQuery1КодКатегории: TFDAutoIncField
+    Left = 400
+    Top = 208
+    object CatQueryКодКатегории: TFDAutoIncField
       FieldName = #1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080
       Origin = '['#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080']'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object FDQuery1Наименование: TWideStringField
+    object CatQueryНаименование: TWideStringField
       FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
       Origin = '['#1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077']'
       Size = 15
@@ -559,7 +559,121 @@
   object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
     DriverID = 'MsAcc'
     ODBCDriver = 'Microsoft Access Driver (*.mdb, *.accdb)'
-    Left = 504
-    Top = 240
+    Left = 592
+    Top = 296
+  end
+  object MatQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'select m.'#1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072',m.'#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080',m.'#1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072',m.'#1054#1087#1080#1089#1072#1085#1080#1077',m' +
+        '.'#1062#1077#1085#1072' '
+      'from '#1052#1072#1090#1077#1088#1080#1072#1083' m,'#1050#1072#1090#1077#1075#1086#1088#1080#1103' k '
+      'where m.'#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080'=k.'#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080)
+    Left = 400
+    Top = 264
+    object MatQueryКодМатериала: TFDAutoIncField
+      FieldName = #1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072
+      Origin = '['#1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object MatQueryКодКатегории: TIntegerField
+      FieldName = #1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080
+      Origin = '['#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080']'
+    end
+    object MatQueryИмяМатериала: TWideStringField
+      FieldName = #1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072
+      Origin = '['#1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072']'
+      Size = 50
+    end
+    object MatQueryОписание: TWideMemoField
+      FieldName = #1054#1087#1080#1089#1072#1085#1080#1077
+      Origin = '['#1054#1087#1080#1089#1072#1085#1080#1077']'
+      BlobType = ftWideMemo
+    end
+    object MatQueryЦена: TCurrencyField
+      FieldName = #1062#1077#1085#1072
+      Origin = '['#1062#1077#1085#1072']'
+    end
+  end
+  object MarkaQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * From '#1055#1088#1086#1080#1079#1074#1086#1076#1080#1090#1077#1083#1100)
+    Left = 400
+    Top = 328
+    object MarkaQueryКодМарки: TFDAutoIncField
+      FieldName = #1050#1086#1076#1052#1072#1088#1082#1080
+      Origin = '['#1050#1086#1076#1052#1072#1088#1082#1080']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object MarkaQueryМаркаТехники: TWideStringField
+      FieldName = #1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080
+      Origin = '['#1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080']'
+    end
+    object MarkaQueryОписание: TWideMemoField
+      FieldName = #1054#1087#1080#1089#1072#1085#1080#1077
+      Origin = '['#1054#1087#1080#1089#1072#1085#1080#1077']'
+      BlobType = ftWideMemo
+    end
+  end
+  object VidQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * From '#1042#1080#1076)
+    Left = 456
+    Top = 208
+    object VidQueryКодВида: TFDAutoIncField
+      FieldName = #1050#1086#1076#1042#1080#1076#1072
+      Origin = '['#1050#1086#1076#1042#1080#1076#1072']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object VidQueryВидТехники: TWideStringField
+      FieldName = #1042#1080#1076#1058#1077#1093#1085#1080#1082#1080
+      Origin = '['#1042#1080#1076#1058#1077#1093#1085#1080#1082#1080']'
+      Size = 15
+    end
+    object VidQueryОписание: TWideStringField
+      FieldName = #1054#1087#1080#1089#1072#1085#1080#1077
+      Origin = '['#1054#1087#1080#1089#1072#1085#1080#1077']'
+      Size = 255
+    end
+  end
+  object ClientQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * From '#1050#1083#1080#1077#1085#1090)
+    Left = 456
+    Top = 264
+  end
+  object RabotaQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * From '#1056#1072#1073#1086#1090#1072)
+    Left = 464
+    Top = 328
+    object RabotaQueryКодРаботы: TFDAutoIncField
+      FieldName = #1050#1086#1076#1056#1072#1073#1086#1090#1099
+      Origin = '['#1050#1086#1076#1056#1072#1073#1086#1090#1099']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object RabotaQueryИмяРаботы: TWideStringField
+      FieldName = #1048#1084#1103#1056#1072#1073#1086#1090#1099
+      Origin = '['#1048#1084#1103#1056#1072#1073#1086#1090#1099']'
+      Size = 70
+    end
+    object RabotaQueryОписание: TWideMemoField
+      FieldName = #1054#1087#1080#1089#1072#1085#1080#1077
+      Origin = '['#1054#1087#1080#1089#1072#1085#1080#1077']'
+      BlobType = ftWideMemo
+    end
+    object RabotaQueryЦенаРаботы: TCurrencyField
+      FieldName = #1062#1077#1085#1072#1056#1072#1073#1086#1090#1099
+      Origin = '['#1062#1077#1085#1072#1056#1072#1073#1086#1090#1099']'
+    end
   end
 end

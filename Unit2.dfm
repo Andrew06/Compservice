@@ -1,10 +1,11 @@
 object Form2: TForm2
   Left = 0
   Top = 0
+  AutoSize = True
   BorderIcons = [biSystemMenu]
   Caption = #1050#1083#1080#1077#1085#1090#1099
   ClientHeight = 541
-  ClientWidth = 720
+  ClientWidth = 735
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,12 +17,13 @@ object Form2: TForm2
   Position = poDesktopCenter
   OnActivate = FormActivate
   OnClose = FormClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label2: TLabel
     Left = 0
-    Top = 266
-    Width = 720
+    Top = 268
+    Width = 735
     Height = 25
     Alignment = taCenter
     AutoSize = False
@@ -40,9 +42,9 @@ object Form2: TForm2
   end
   object Label3: TLabel
     Left = 0
-    Top = 492
+    Top = 495
     Width = 361
-    Height = 34
+    Height = 25
     Alignment = taCenter
     AutoSize = False
     Caption = #1055#1054#1048#1057#1050' '#1050#1051#1048#1045#1053#1058#1040' '#1055#1054' '#1048#1052#1045#1053#1048
@@ -57,10 +59,10 @@ object Form2: TForm2
     Transparent = False
   end
   object Label4: TLabel
-    Left = 359
-    Top = 492
-    Width = 361
-    Height = 34
+    Left = 360
+    Top = 495
+    Width = 375
+    Height = 25
     Alignment = taCenter
     AutoSize = False
     Caption = #1055#1054#1048#1057#1050' '#1058#1045#1061#1053#1048#1050#1048' '#1055#1054' '#1053#1054#1052#1045#1056#1059
@@ -76,8 +78,8 @@ object Form2: TForm2
   end
   object Label1: TLabel
     Left = 0
-    Top = -1
-    Width = 720
+    Top = 0
+    Width = 735
     Height = 18
     Alignment = taCenter
     AutoSize = False
@@ -96,8 +98,8 @@ object Form2: TForm2
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 16
-    Width = 720
+    Top = 18
+    Width = 735
     Height = 210
     Color = clGradientActiveCaption
     DataSource = DataModule6.DSClient
@@ -129,6 +131,7 @@ object Form2: TForm2
         FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
         Title.Alignment = taCenter
         Title.Caption = #1048#1052#1071' '#1050#1051#1048#1045#1053#1058#1040
+        Width = 200
         Visible = True
       end
       item
@@ -136,6 +139,7 @@ object Form2: TForm2
         FieldName = #1040#1076#1088#1077#1089
         Title.Alignment = taCenter
         Title.Caption = #1040#1044#1056#1045#1057
+        Width = 115
         Visible = True
       end
       item
@@ -143,6 +147,7 @@ object Form2: TForm2
         FieldName = #1058#1077#1083#1077#1092#1086#1085
         Title.Alignment = taCenter
         Title.Caption = #1058#1045#1051#1045#1060#1054#1053
+        Width = 105
         Visible = True
       end
       item
@@ -150,6 +155,7 @@ object Form2: TForm2
         FieldName = #1060#1072#1082#1089
         Title.Alignment = taCenter
         Title.Caption = #1060#1040#1050#1057
+        Width = 105
         Visible = True
       end
       item
@@ -157,21 +163,22 @@ object Form2: TForm2
         FieldName = 'Email'
         Title.Alignment = taCenter
         Title.Caption = 'EMAIL'
+        Width = 105
         Visible = True
       end>
   end
   object DBNavigator1: TDBNavigator
     Left = 0
     Top = 228
-    Width = 720
+    Width = 730
     Height = 40
     DataSource = DataModule6.DSClient
     TabOrder = 1
   end
   object DBGrid2: TDBGrid
-    Left = -5
-    Top = 289
-    Width = 725
+    Left = 0
+    Top = 293
+    Width = 735
     Height = 161
     Color = clMoneyGreen
     DataSource = DataModule6.DSTexnika
@@ -236,15 +243,15 @@ object Form2: TForm2
   end
   object DBNavigator2: TDBNavigator
     Left = 0
-    Top = 449
-    Width = 720
+    Top = 454
+    Width = 730
     Height = 41
     DataSource = DataModule6.DSTexnika
     TabOrder = 3
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 0
-    Top = 516
+    Top = 520
     Width = 361
     Height = 21
     KeyField = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
@@ -253,9 +260,9 @@ object Form2: TForm2
     TabOrder = 4
   end
   object DBLookupComboBox2: TDBLookupComboBox
-    Left = 359
-    Top = 516
-    Width = 361
+    Left = 360
+    Top = 520
+    Width = 375
     Height = 21
     KeyField = #1053#1086#1084#1077#1088#1090#1077#1093#1085#1080#1082#1080
     ListField = #1053#1086#1084#1077#1088#1090#1077#1093#1085#1080#1082#1080

@@ -279,21 +279,11 @@ Coordinates=1315,1046,182,33
 [ADOTableRashodКодМатериала]
 Coordinates=1106,1070,176,33
 
-[FDQuery1Наименование]
-Coordinates=937,1070,139,33
-
-[FDQuery1КодКатегории]
-Coordinates=768,1070,135,33
-
 [FDGUIxWaitCursor1]
 Coordinates=629,1070,113,33
 
 [FDGUIxScriptDialog1]
 Coordinates=490,1070,118,33
-
-[FDQuery1]
-Coordinates=528,551,77,87
-Visible=True
 
 [FDConnection1]
 Coordinates=780,796,90,33
@@ -312,4 +302,14 @@ Coordinates=23,1070,114,33
 
 []
 Coordinates=68,231,82,33
+
+[CatQuery]
+Coordinates=528,551,77,87
+Visible=True
+
+[CatQueryКодКатегории]
+Coordinates=768,1070,135,33
+
+[CatQueryНаименование]
+Coordinates=937,1070,139,33
 

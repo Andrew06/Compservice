@@ -1,9 +1,10 @@
 object Form10: TForm10
   Left = 0
   Top = 0
+  Width = 285
+  Height = 142
+  AutoScroll = True
   Caption = #1055#1077#1088#1080#1086#1076' '#1086#1090#1095#1077#1090#1085#1086#1089#1090#1080
-  ClientHeight = 108
-  ClientWidth = 278
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +16,8 @@ object Form10: TForm10
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 4
-    Top = 5
+    Left = 0
+    Top = 0
     Width = 10
     Height = 18
     AutoSize = False
@@ -29,8 +30,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 4
-    Top = 28
+    Left = 0
+    Top = 23
     Width = 20
     Height = 18
     Caption = #1055#1086
@@ -42,8 +43,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 4
-    Top = 52
+    Left = 0
+    Top = 47
     Width = 57
     Height = 18
     Caption = #1052#1072#1089#1090#1077#1088
@@ -55,8 +56,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object DateTimePicker1: TDateTimePicker
-    Left = 36
-    Top = 5
+    Left = 32
+    Top = 0
     Width = 237
     Height = 21
     Date = 41387.726000150460000000
@@ -64,8 +65,8 @@ object Form10: TForm10
     TabOrder = 0
   end
   object DateTimePicker2: TDateTimePicker
-    Left = 36
-    Top = 28
+    Left = 32
+    Top = 23
     Width = 237
     Height = 21
     Date = 41387.726206863420000000
@@ -73,8 +74,8 @@ object Form10: TForm10
     TabOrder = 1
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 67
-    Top = 52
+    Left = 63
+    Top = 47
     Width = 206
     Height = 21
     KeyField = #1048#1084#1103#1084#1072#1089#1090#1077#1088#1072
@@ -83,8 +84,8 @@ object Form10: TForm10
     TabOrder = 2
   end
   object BitBtn1: TBitBtn
-    Left = 4
-    Top = 76
+    Left = 0
+    Top = 71
     Width = 269
     Height = 33
     Kind = bkOK

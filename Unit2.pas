@@ -56,6 +56,7 @@ end;
 procedure TForm2.FormShow(Sender: TObject);
 begin
   Datamodule6.ClientQuery.Open;
+  Datamodule6.TexnikaQuery.Open;
 end;
 
 procedure TForm2.N1Click(Sender: TObject);

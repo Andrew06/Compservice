@@ -183,12 +183,12 @@
     Top = 136
   end
   object DSMaster: TDataSource
-    DataSet = ADOTableMaster
+    DataSet = MasterQuery
     Left = 280
     Top = 72
   end
   object DSTexnika: TDataSource
-    DataSet = ADOTableTexnika
+    DataSet = TexnikaQuery
     Left = 280
     Top = 128
   end
@@ -542,7 +542,7 @@
     Connection = FDConnection1
     SQL.Strings = (
       'select * from '#1050#1072#1090#1077#1075#1086#1088#1080#1103)
-    Left = 400
+    Left = 392
     Top = 208
     object CatQueryКодКатегории: TFDAutoIncField
       FieldName = #1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080
@@ -559,8 +559,8 @@
   object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
     DriverID = 'MsAcc'
     ODBCDriver = 'Microsoft Access Driver (*.mdb, *.accdb)'
-    Left = 592
-    Top = 296
+    Left = 608
+    Top = 432
   end
   object MatQuery: TFDQuery
     Connection = FDConnection1
@@ -570,8 +570,8 @@
         '.'#1062#1077#1085#1072' '
       'from '#1052#1072#1090#1077#1088#1080#1072#1083' m,'#1050#1072#1090#1077#1075#1086#1088#1080#1103' k '
       'where m.'#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080'=k.'#1050#1086#1076#1050#1072#1090#1077#1075#1086#1088#1080#1080)
-    Left = 400
-    Top = 264
+    Left = 448
+    Top = 208
     object MatQueryКодМатериала: TFDAutoIncField
       FieldName = #1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072
       Origin = '['#1050#1086#1076#1052#1072#1090#1077#1088#1080#1072#1083#1072']'
@@ -601,8 +601,8 @@
     Connection = FDConnection1
     SQL.Strings = (
       'Select * From '#1055#1088#1086#1080#1079#1074#1086#1076#1080#1090#1077#1083#1100)
-    Left = 400
-    Top = 328
+    Left = 560
+    Top = 208
     object MarkaQueryКодМарки: TFDAutoIncField
       FieldName = #1050#1086#1076#1052#1072#1088#1082#1080
       Origin = '['#1050#1086#1076#1052#1072#1088#1082#1080']'
@@ -623,7 +623,7 @@
     Connection = FDConnection1
     SQL.Strings = (
       'Select * From '#1042#1080#1076)
-    Left = 456
+    Left = 504
     Top = 208
     object VidQueryКодВида: TFDAutoIncField
       FieldName = #1050#1086#1076#1042#1080#1076#1072
@@ -646,15 +646,15 @@
     Connection = FDConnection1
     SQL.Strings = (
       'Select * From '#1050#1083#1080#1077#1085#1090)
-    Left = 456
-    Top = 264
+    Left = 624
+    Top = 208
   end
   object RabotaQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'Select * From '#1056#1072#1073#1086#1090#1072)
-    Left = 464
-    Top = 328
+    Left = 392
+    Top = 264
     object RabotaQueryКодРаботы: TFDAutoIncField
       FieldName = #1050#1086#1076#1056#1072#1073#1086#1090#1099
       Origin = '['#1050#1086#1076#1056#1072#1073#1086#1090#1099']'
@@ -675,5 +675,83 @@
       FieldName = #1062#1077#1085#1072#1056#1072#1073#1086#1090#1099
       Origin = '['#1062#1077#1085#1072#1056#1072#1073#1086#1090#1099']'
     end
+  end
+  object MasterQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from '#1052#1072#1089#1090#1077#1088)
+    Left = 448
+    Top = 264
+    object MasterQueryКодМастера: TFDAutoIncField
+      FieldName = #1050#1086#1076#1052#1072#1089#1090#1077#1088#1072
+      Origin = '['#1050#1086#1076#1052#1072#1089#1090#1077#1088#1072']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object MasterQueryИмяМастера: TWideStringField
+      FieldName = #1048#1084#1103#1052#1072#1089#1090#1077#1088#1072
+      Origin = '['#1048#1084#1103#1052#1072#1089#1090#1077#1088#1072']'
+      Size = 30
+    end
+    object MasterQueryТелефонМастера: TWideStringField
+      FieldName = #1058#1077#1083#1077#1092#1086#1085#1052#1072#1089#1090#1077#1088#1072
+      Origin = '['#1058#1077#1083#1077#1092#1086#1085#1052#1072#1089#1090#1077#1088#1072']'
+      Size = 15
+    end
+    object MasterQueryСертификат: TWideStringField
+      FieldName = #1057#1077#1088#1090#1080#1092#1080#1082#1072#1090
+      Origin = '['#1057#1077#1088#1090#1080#1092#1080#1082#1072#1090']'
+      Size = 70
+    end
+  end
+  object TexnikaQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'Select * from '#1058#1077#1093#1085#1080#1082#1072)
+    Left = 504
+    Top = 264
+    object TexnikaQueryНомерТехники: TWideStringField
+      FieldName = #1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080
+      Origin = '['#1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080']'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Size = 15
+    end
+    object TexnikaQueryНазвание: TWideStringField
+      FieldName = #1053#1072#1079#1074#1072#1085#1080#1077
+      Origin = '['#1053#1072#1079#1074#1072#1085#1080#1077']'
+      Size = 15
+    end
+    object TexnikaQueryКодКлиента: TIntegerField
+      FieldName = #1050#1086#1076#1050#1083#1080#1077#1085#1090#1072
+      Origin = '['#1050#1086#1076#1050#1083#1080#1077#1085#1090#1072']'
+    end
+    object TexnikaQueryКодВида: TIntegerField
+      FieldName = #1050#1086#1076#1042#1080#1076#1072
+      Origin = '['#1050#1086#1076#1042#1080#1076#1072']'
+    end
+    object TexnikaQueryКодМарки: TIntegerField
+      FieldName = #1050#1086#1076#1052#1072#1088#1082#1080
+      Origin = '['#1050#1086#1076#1052#1072#1088#1082#1080']'
+    end
+  end
+  object ZakazQuery: TFDQuery
+    Connection = FDConnection1
+    Left = 560
+    Top = 264
+  end
+  object RemontQuery: TFDQuery
+    Connection = FDConnection1
+    Left = 624
+    Top = 264
+  end
+  object RashodQuery: TFDQuery
+    Connection = FDConnection1
+    Left = 384
+    Top = 328
+  end
+  object FDMSAccessService1: TFDMSAccessService
+    DriverLink = FDPhysMSAccessDriverLink1
+    Left = 480
+    Top = 432
   end
 end

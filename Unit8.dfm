@@ -1,9 +1,11 @@
 object Form8: TForm8
   Left = 0
   Top = 0
+  Width = 616
+  Height = 389
+  AutoScroll = True
+  AutoSize = True
   Caption = #1056#1077#1084#1086#1085#1090#1085#1099#1077' '#1088#1072#1073#1086#1090#1099
-  ClientHeight = 349
-  ClientWidth = 600
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -44,10 +46,16 @@ object Form8: TForm8
     Left = 0
     Top = 328
     Width = 600
-    Height = 21
+    Height = 23
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     KeyField = #1048#1084#1103#1088#1072#1073#1086#1090#1099
     ListField = #1048#1084#1103#1088#1072#1073#1086#1090#1099
     ListSource = DataModule6.DSRabota
+    ParentFont = False
     TabOrder = 1
   end
   object DBCtrlGrid1: TDBCtrlGrid

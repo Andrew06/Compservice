@@ -364,14 +364,18 @@ begin
   DataModule6.VidQuery.Open;
   Datamodule6.ClientQuery.Active:= true;
   DataModule6.ClientQuery.Open;
+  Datamodule6.MasterQuery.Active:= true;
+  DataModule6.MasterQuery.Open;
+  Datamodule6.TexnikaQuery.Active:= true;
+  DataModule6.TexnikaQuery.Open;
 //  Datamodule6.ADOTableCat.Active:= true;
 //  Datamodule6.ADOTableMat.Active:= true;
 //  Datamodule6.ADOTableVid.Active:= true;
 //  Datamodule6.ADOTableMarka.Active:= true;
 //  Datamodule6.ADOTableClient.Active:= true;
   Datamodule6.ADOTableRabota.Active:= true;
-  Datamodule6.ADOTableMaster.Active:= true;
-  Datamodule6.ADOTableTexnika.Active:= true;
+//  Datamodule6.ADOTableMaster.Active:= true;
+//  Datamodule6.ADOTableTexnika.Active:= true;
   Datamodule6.ADOTableZakaz.Active:= true;
   Datamodule6.ADOTableRemont.Active:= true;
   Datamodule6.ADOTableRashod.Active:= true;
@@ -471,7 +475,6 @@ begin
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Справка №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
-    Application.Minimize;
     Datamodule6.WordApplication1.Documents.Open(N,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam);
@@ -498,16 +501,15 @@ begin
     Datamodule6.WordDocument1.Tables.Item(1).Cell(12,2).Range.InsertBefore(St);
     St:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(15,2).Range.InsertBefore(St);
+    Datamodule6.WordApplication1.Visible:=true;
   Except
     begin
       ShowMessage('Шаблон документа не найден!');
       Datamodule6.WordApplication1.Disconnect;
-      Application.Restore;
       exit;
     end;
   end;
   Datamodule6.WordApplication1.Disconnect;
-  Application.Restore;
 end;
 
 procedure TForm1.N21Click(Sender: TObject);
@@ -525,7 +527,6 @@ begin
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Наряд №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
-    Application.Minimize;
     Datamodule6.WordApplication1.Documents.Open(N,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam);
@@ -552,12 +553,10 @@ begin
     begin
       ShowMessage('Шаблон документа не найден!');
       Datamodule6.WordApplication1.Disconnect;
-      Application.Restore;
       exit;
     end;
   end;
   Datamodule6.WordApplication1.Disconnect;
-  Application.Restore;
 end;
 
 procedure TForm1.N22Click(Sender: TObject);
@@ -576,7 +575,6 @@ begin
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Акт №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
-    Application.Minimize;
     Datamodule6.WordApplication1.Documents.Open(N,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,
     EmptyParam,EmptyParam);
@@ -667,12 +665,10 @@ begin
     begin
       ShowMessage('Шаблон документа не найден!');
       Datamodule6.WordApplication1.Disconnect;
-      Application.Restore;
       exit;
     end;
   end;
   Datamodule6.WordApplication1.Disconnect;
-  Application.Restore;
 end;
 
 procedure TForm1.N23Click(Sender: TObject);

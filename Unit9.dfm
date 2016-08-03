@@ -1,9 +1,11 @@
 object Form9: TForm9
   Left = 0
   Top = 0
+  Width = 289
+  Height = 125
+  AutoScroll = True
+  AutoSize = True
   Caption = #1055#1077#1088#1080#1086#1076' '#1086#1090#1095#1077#1090#1085#1086#1089#1090#1080
-  ClientHeight = 103
-  ClientWidth = 282
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +18,7 @@ object Form9: TForm9
   TextHeight = 13
   object Label3: TLabel
     Left = 0
-    Top = 7
+    Top = 0
     Width = 10
     Height = 18
     Caption = 'C'
@@ -29,7 +31,7 @@ object Form9: TForm9
   end
   object Label4: TLabel
     Left = 0
-    Top = 34
+    Top = 27
     Width = 20
     Height = 18
     Caption = #1055#1086
@@ -42,7 +44,7 @@ object Form9: TForm9
   end
   object BitBtn2: TBitBtn
     Left = 0
-    Top = 61
+    Top = 54
     Width = 273
     Height = 33
     Kind = bkOK
@@ -52,7 +54,7 @@ object Form9: TForm9
   end
   object DateTimePicker3: TDateTimePicker
     Left = 24
-    Top = 7
+    Top = 0
     Width = 249
     Height = 21
     Date = 41387.726206863420000000
@@ -61,7 +63,7 @@ object Form9: TForm9
   end
   object DateTimePicker4: TDateTimePicker
     Left = 26
-    Top = 34
+    Top = 27
     Width = 247
     Height = 21
     Date = 41387.726000150460000000

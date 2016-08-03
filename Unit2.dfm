@@ -1,11 +1,12 @@
 object Form2: TForm2
   Left = 0
   Top = 0
+  Width = 751
+  Height = 599
+  AutoScroll = True
   AutoSize = True
   BorderIcons = [biSystemMenu]
   Caption = #1050#1083#1080#1077#1085#1090#1099
-  ClientHeight = 541
-  ClientWidth = 735
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

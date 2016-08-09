@@ -25,6 +25,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure N1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -33,12 +34,17 @@ type
 
 var
   Form2: TForm2;
-
   implementation
 
 {$R *.dfm}
 
 uses Unit1, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9;
+
+procedure TForm2.DBGrid1CellClick(Column: TColumn);
+begin
+  Datamodule6.TexnikaQuery.Params.ParamByName('param').Value:=Datamodule6.ClientQuery.Fields[0].AsInteger;
+  Datamodule6.TexnikaQuery.Open;
+end;
 
 procedure TForm2.FormActivate(Sender: TObject);
 begin
@@ -56,6 +62,7 @@ end;
 procedure TForm2.FormShow(Sender: TObject);
 begin
   Datamodule6.ClientQuery.Open;
+  Datamodule6.TexnikaQuery.Params.ParamByName('param').Value:=Datamodule6.ClientQuery.Fields[0].AsInteger;
   Datamodule6.TexnikaQuery.Open;
 end;
 

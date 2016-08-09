@@ -119,6 +119,7 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
@@ -200,46 +201,26 @@ object Form2: TForm2
     Columns = <
       item
         Expanded = False
-        FieldName = #1042#1080#1076
-        Title.Caption = #1042#1048#1044' '#1058#1045#1061#1053#1048#1050#1048' '
-        Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #1052#1072#1088#1082#1072
-        Title.Caption = #1052#1040#1056#1050#1040
-        Width = 100
+        FieldName = #1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080
+        Title.Caption = #1053#1086#1084#1077#1088' '#1090#1077#1093#1085#1080#1082#1080
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1053#1072#1079#1074#1072#1085#1080#1077
-        Title.Caption = #1053#1040#1048#1052#1045#1053#1054#1042#1040#1053#1048#1045' '#1058#1045#1061#1053#1048#1050#1048
-        Width = 300
         Visible = True
       end
       item
         Expanded = False
-        FieldName = #1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080
-        Title.Caption = #8470
-        Width = 100
+        FieldName = #1042#1080#1076#1058#1077#1093#1085#1080#1082#1080
+        Title.Caption = #1042#1080#1076' '#1090#1077#1093#1085#1080#1082#1080
         Visible = True
       end
       item
         Expanded = False
-        FieldName = #1050#1086#1076#1050#1083#1080#1077#1085#1090#1072
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = #1050#1086#1076#1042#1080#1076#1072
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = #1050#1086#1076#1052#1072#1088#1082#1080
-        Visible = False
+        FieldName = #1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080
+        Title.Caption = #1052#1072#1088#1082#1072' '#1090#1077#1093#1085#1080#1082#1080
+        Visible = True
       end>
   end
   object DBNavigator2: TDBNavigator

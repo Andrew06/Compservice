@@ -648,6 +648,35 @@
       'Select * From '#1050#1083#1080#1077#1085#1090)
     Left = 624
     Top = 208
+    object ClientQueryКодКлиента: TFDAutoIncField
+      FieldName = #1050#1086#1076#1050#1083#1080#1077#1085#1090#1072
+      Origin = '['#1050#1086#1076#1050#1083#1080#1077#1085#1090#1072']'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object ClientQueryНаименование: TWideStringField
+      FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+      Origin = '['#1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077']'
+    end
+    object ClientQueryАдрес: TWideStringField
+      FieldName = #1040#1076#1088#1077#1089
+      Origin = '['#1040#1076#1088#1077#1089']'
+    end
+    object ClientQueryТелефон: TWideStringField
+      FieldName = #1058#1077#1083#1077#1092#1086#1085
+      Origin = '['#1058#1077#1083#1077#1092#1086#1085']'
+      Size = 15
+    end
+    object ClientQueryФакс: TWideStringField
+      FieldName = #1060#1072#1082#1089
+      Origin = '['#1060#1072#1082#1089']'
+      Size = 15
+    end
+    object ClientQueryEmail: TWideStringField
+      FieldName = 'Email'
+      Origin = 'Email'
+      Size = 15
+    end
   end
   object RabotaQuery: TFDQuery
     Connection = FDConnection1
@@ -707,9 +736,20 @@
   object TexnikaQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'Select * from '#1058#1077#1093#1085#1080#1082#1072)
+      'Select '#1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080','#1053#1072#1079#1074#1072#1085#1080#1077', '#1042#1080#1076#1058#1077#1093#1085#1080#1082#1080', '#1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080' '
+      'from '#1058#1077#1093#1085#1080#1082#1072', '#1050#1083#1080#1077#1085#1090', '#1055#1088#1086#1080#1079#1074#1086#1076#1080#1090#1077#1083#1100', '#1042#1080#1076
+      
+        'where '#1058#1077#1093#1085#1080#1082#1072'.'#1050#1086#1076#1050#1083#1080#1077#1085#1090#1072'=:param and '#1058#1077#1093#1085#1080#1082#1072'.'#1050#1086#1076#1052#1072#1088#1082#1080'='#1055#1088#1086#1080#1079#1074#1086#1076#1080#1090#1077 +
+        #1083#1100'.'#1050#1086#1076#1052#1072#1088#1082#1080' and '#1058#1077#1093#1085#1080#1082#1072'.'#1050#1086#1076#1042#1080#1076#1072'='#1042#1080#1076'.'#1050#1086#1076#1042#1080#1076#1072)
     Left = 504
     Top = 264
+    ParamData = <
+      item
+        Name = 'PARAM'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
     object TexnikaQueryНомерТехники: TWideStringField
       FieldName = #1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080
       Origin = '['#1053#1086#1084#1077#1088#1058#1077#1093#1085#1080#1082#1080']'
@@ -721,17 +761,20 @@
       Origin = '['#1053#1072#1079#1074#1072#1085#1080#1077']'
       Size = 15
     end
-    object TexnikaQueryКодКлиента: TIntegerField
-      FieldName = #1050#1086#1076#1050#1083#1080#1077#1085#1090#1072
-      Origin = '['#1050#1086#1076#1050#1083#1080#1077#1085#1090#1072']'
+    object TexnikaQueryВидТехники: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = #1042#1080#1076#1058#1077#1093#1085#1080#1082#1080
+      Origin = '['#1042#1080#1076#1058#1077#1093#1085#1080#1082#1080']'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 15
     end
-    object TexnikaQueryКодВида: TIntegerField
-      FieldName = #1050#1086#1076#1042#1080#1076#1072
-      Origin = '['#1050#1086#1076#1042#1080#1076#1072']'
-    end
-    object TexnikaQueryКодМарки: TIntegerField
-      FieldName = #1050#1086#1076#1052#1072#1088#1082#1080
-      Origin = '['#1050#1086#1076#1052#1072#1088#1082#1080']'
+    object TexnikaQueryМаркаТехники: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = #1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080
+      Origin = '['#1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080']'
+      ProviderFlags = []
+      ReadOnly = True
     end
   end
   object ZakazQuery: TFDQuery

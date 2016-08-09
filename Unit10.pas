@@ -17,6 +17,7 @@ type
     DateTimePicker2: TDateTimePicker;
     DBLookupComboBox1: TDBLookupComboBox;
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +44,6 @@ N:=ExtractFilePath(Application.ExeName)+'Doc5.doc';
 Save:=ExtractFilePath(Application.ExeName)+'Doc\Отчет №2.doc';
 Datamodule6.WordApplication1.Connect;
 Try
-Application.Minimize;
 Datamodule6.WordApplication1.Documents.Open(N,EmptyParam,EmptyParam,EmptyParam,
 EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,EmptyParam,
 EmptyParam,EmptyParam);
@@ -98,19 +98,22 @@ end;
 Datamodule6.WordDocument1.Tables.Item(2).Rows.Item(2+i).Delete;
 St1:=Format('%m',[Sum]);
 Datamodule6.WordDocument1.Tables.Item(3).Cell(1,2).Range.InsertBefore(St1);
+Datamodule6.WordApplication1.Visible:=true;
 Except
 begin
 ShowMessage('Шаблон документа не найден!');
 Datamodule6.WordApplication1.Disconnect;
-Application.Restore;
 exit;
 end;
 end;
 Datamodule6.WordApplication1.Disconnect;
-Datamodule6.WordApplication1.Quit(true);
-Application.Restore;
 Datamodule6.ADOTableZakaz.Filtered:=False;
 form10.Close;
+end;
+
+procedure TForm10.FormShow(Sender: TObject);
+begin
+  DataModule6.MasterQuery.Open;
 end;
 
 end.

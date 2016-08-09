@@ -13,6 +13,7 @@ object Form10: TForm10
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -78,8 +79,8 @@ object Form10: TForm10
     Top = 47
     Width = 206
     Height = 21
-    KeyField = #1048#1084#1103#1084#1072#1089#1090#1077#1088#1072
-    ListField = #1048#1084#1103#1084#1072#1089#1090#1077#1088#1072
+    KeyField = #1048#1084#1103#1052#1072#1089#1090#1077#1088#1072
+    ListField = #1048#1084#1103#1052#1072#1089#1090#1077#1088#1072
     ListSource = DataModule6.DSMaster
     TabOrder = 2
   end

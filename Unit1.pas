@@ -86,6 +86,10 @@ type
     JumpList1: TJumpList;
     PopupMenu1: TPopupMenu;
     N34: TMenuItem;
+    N35: TMenuItem;
+    N36: TMenuItem;
+    N37: TMenuItem;
+    N38: TMenuItem;
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -135,6 +139,8 @@ type
     procedure Timer2Timer(Sender: TObject);
     procedure Taskbar1ThumbButtonClick(Sender: TObject; AButtonID: Integer);
     procedure N34Click(Sender: TObject);
+    procedure N37Click(Sender: TObject);
+    procedure N38Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -549,6 +555,7 @@ begin
     Datamodule6.WordDocument1.Tables.Item(1).Cell(10,2).Range.InsertBefore(St);
     St:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(13,2).Range.InsertBefore(St);
+    Datamodule6.WordApplication1.Visible:=true;
   Except
     begin
       ShowMessage('Шаблон документа не найден!');
@@ -661,6 +668,7 @@ begin
           end;
       end;
     Datamodule6.WordDocument1.Tables.Item(3).Rows.Item(2+i).Delete;
+    Datamodule6.WordApplication1.Visible:=true;
   Except
     begin
       ShowMessage('Шаблон документа не найден!');
@@ -729,6 +737,24 @@ end;
 procedure TForm1.N34Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.N37Click(Sender: TObject);
+begin
+    Datamodule6.FDConnection1.Close;
+    Datamodule6.ADOConnection1.Close;
+    Datamodule6.FDMSAccessService1.Database := DBPath+'Database.accdb';
+    Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'BD_Backup.accdb';
+    Datamodule6.FDMSAccessService1.Compact;
+end;
+
+procedure TForm1.N38Click(Sender: TObject);
+begin
+    Datamodule6.FDConnection1.Close;
+    Datamodule6.ADOConnection1.Close;
+    Datamodule6.FDMSAccessService1.Database := DBPath+'BD_Backup.accdb';
+    Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'Database.accdb';
+    Datamodule6.FDMSAccessService1.Repair;
 end;
 
 procedure TForm1.N4Click(Sender: TObject);

@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Width = 937
+  Width = 1020
   Height = 725
   AutoScroll = True
   AutoSize = True
@@ -22,7 +22,7 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 199
     Top = 0
-    Width = 716
+    Width = 805
     Height = 18
     Alignment = taCenter
     AutoSize = False
@@ -51,9 +51,9 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 0
-    Top = 258
+    Top = 255
     Width = 193
-    Height = 15
+    Height = 21
     Alignment = taCenter
     AutoSize = False
     Caption = #1060#1048#1051#1068#1058#1056#1067' '#1047#1040#1050#1040#1047#1054#1042
@@ -66,7 +66,7 @@ object Form1: TForm1
   end
   object Label4: TLabel
     Left = 0
-    Top = 514
+    Top = 510
     Width = 193
     Height = 23
     Alignment = taCenter
@@ -98,9 +98,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label6: TLabel
-    Left = 537
-    Top = 397
-    Width = 384
+    Left = 545
+    Top = 399
+    Width = 459
     Height = 207
     AutoSize = False
     Caption = #1050#1054#1052#1055#1051#1045#1050#1058#1059#1070#1065#1048#1045' '#1048' '#1056#1040#1057#1061#1054#1044#1053#1067#1045' '#1052#1040#1058#1045#1056#1048#1040#1051#1067
@@ -136,7 +136,7 @@ object Form1: TForm1
   object DBGrid1: TDBGrid
     Left = 199
     Top = 24
-    Width = 716
+    Width = 805
     Height = 336
     Color = clSkyBlue
     DataSource = DataModule6.DSZakaz
@@ -160,11 +160,12 @@ object Form1: TForm1
         Expanded = False
         FieldName = #1044#1072#1090#1072#1047#1072#1082#1072#1079#1072
         Title.Caption = #1044#1040#1058#1040' '#1047#1040#1050#1040#1047#1040
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = #1058#1077#1093#1085#1080#1082#1072
+        FieldName = #1053#1072#1079#1074#1072#1085#1080#1077
         Title.Caption = #1058#1045#1061#1053#1048#1050#1040
         Width = 100
         Visible = True
@@ -178,9 +179,8 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1050#1083#1080#1077#1085#1090
+        FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
         Title.Caption = #1050#1051#1048#1045#1053#1058
-        Width = 64
         Visible = True
       end
       item
@@ -192,7 +192,7 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1052#1072#1089#1090#1077#1088
+        FieldName = #1048#1084#1103#1052#1072#1089#1090#1077#1088#1072
         Title.Caption = #1052#1040#1057#1058#1045#1056
         Width = 100
         Visible = True
@@ -208,7 +208,7 @@ object Form1: TForm1
         Expanded = False
         FieldName = #1044#1072#1090#1072#1042#1099#1087#1086#1083#1085#1077#1085#1080#1103
         Title.Caption = #1044#1040#1058#1040
-        Width = 64
+        Width = 100
         Visible = True
       end
       item
@@ -227,16 +227,17 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1057#1091#1084#1084#1072
-        Title.Caption = #1057#1059#1052#1052#1040
+        FieldName = #1057#1091#1084#1084#1072#1047#1072#1082#1072#1079#1072
+        Title.Caption = #1057#1091#1084#1084#1072' '#1047#1072#1082#1072#1079#1072
+        Width = 64
         Visible = True
       end>
   end
   object DBNavigator1: TDBNavigator
     Left = 199
-    Top = 366
-    Width = 715
-    Height = 33
+    Top = 358
+    Width = 805
+    Height = 41
     DataSource = DataModule6.DSZakaz
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
     TabOrder = 1
@@ -270,25 +271,27 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1056#1072#1073#1086#1090#1072
+        FieldName = #1048#1084#1103#1056#1072#1073#1086#1090#1099
         Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = #1062#1077#1085#1072
+        FieldName = #1062#1077#1085#1072#1056#1072#1073#1086#1090#1099
         Visible = True
       end
       item
+        ButtonStyle = cbsEllipsis
         Expanded = False
         FieldName = #1042#1099#1087#1086#1083#1085#1077#1085#1072
+        Width = 64
         Visible = True
       end>
   end
   object DBGrid3: TDBGrid
     Left = 545
     Top = 418
-    Width = 374
+    Width = 459
     Height = 146
     Color = clMoneyGreen
     DataSource = DataModule6.DSRashod
@@ -313,18 +316,14 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1050#1072#1090#1077#1075#1086#1088#1080#1103
+        FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072
+        Title.Caption = #1052#1072#1090#1077#1088#1080#1072#1083
         Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #1062#1077#1085#1072
         Visible = True
       end
       item
@@ -334,7 +333,13 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = #1057#1091#1084#1084#1072
+        FieldName = #1062#1077#1085#1072
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1057#1091#1084#1084#1072#1056#1072#1089#1093#1086#1076#1072
+        Width = 64
         Visible = True
       end>
   end
@@ -514,7 +519,7 @@ object Form1: TForm1
   object GroupBox2: TGroupBox
     Left = 545
     Top = 604
-    Width = 376
+    Width = 459
     Height = 38
     Caption = #1057#1059#1052#1052#1040' '#1052#1040#1058#1045#1056#1048#1040#1051#1054#1042
     Color = clMoneyGreen
@@ -522,7 +527,7 @@ object Form1: TForm1
     ParentColor = False
     TabOrder = 22
     object DBText2: TDBText
-      Left = 288
+      Left = 344
       Top = 18
       Width = 65
       Height = 17
@@ -541,7 +546,7 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Top = 642
-    Width = 921
+    Width = 1004
     Height = 25
     AutoHint = True
     BorderWidth = 1
@@ -1003,7 +1008,7 @@ object Form1: TForm1
   object ImageList1: TImageList
     Left = 400
     Bitmap = {
-      494C010102000800940010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800B00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       000000000000000000000000000000000000FFFFFFFFFFFFFFFF000000FF0000
       00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000

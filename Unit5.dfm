@@ -105,8 +105,8 @@ object Form5: TForm5
     Font.Height = -13
     Font.Name = 'Times New Roman'
     Font.Style = []
-    KeyField = #1052#1072#1088#1082#1072#1090#1077#1093#1085#1080#1082#1080
-    ListField = #1052#1072#1088#1082#1072#1090#1077#1093#1085#1080#1082#1080
+    KeyField = #1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080
+    ListField = #1052#1072#1088#1082#1072#1058#1077#1093#1085#1080#1082#1080
     ListSource = DataModule6.DSMarka
     ParentFont = False
     TabOrder = 1

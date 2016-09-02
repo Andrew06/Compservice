@@ -55,7 +55,7 @@ end;
 
 procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  DataModule6.ADOTableZakaz.Close;
+  DataModule6.ZakazQuery.Close;
   N1.Visible:=False;
 end;
 
@@ -68,9 +68,9 @@ end;
 
 procedure TForm2.N1Click(Sender: TObject);
 begin
-  DataModule6.ADOTableZakaz.Insert;
-  DataModule6.ADOTableZakazНомерТехники.Value:=DataModule6.ADOTableTexnikaНомерТехники.Value;
-  DataModule6.ADOTableZakazКодКлиента.Value:=DataModule6.ADOTableTexnikaКодКлиента.Value;
+  DataModule6.ZakazQuery.Insert;
+  DataModule6.ZakazQueryНомерТехники.Value:=DataModule6.TexnikaQueryНомерТехники.Value;
+  DataModule6.ZakazQueryКодКлиента.Value:=DataModule6.TexnikaQueryКодКлиента.Value;
   Form2.Close;
   Form3.N1.Visible:=True;
   Form3.ShowModal;

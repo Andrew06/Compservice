@@ -63,7 +63,7 @@ end;
 
 procedure TForm7.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  DataModule6.ADOTableRashod.Cancel;
+  DataModule6.RashodQuery.Cancel;
   N1.Visible:=False;
 end;
 
@@ -79,10 +79,10 @@ end;
 
 procedure TForm7.N1Click(Sender: TObject);
 begin
-  DataModule6.ADOTableRashodКодМатериала.Value:=DataModule6.MatQueryКодМатериала.Value;
-  DataModule6.ADOTableRashodКодКатегории.Value:=DataModule6.MatQueryКодМатериала.Value;
-  DataModule6.ADOTableRashodКоличество.Value:=1;
-  DataModule6.ADOTableRashod.Post;
+  DataModule6.RashodQueryКодМатериала.Value:=DataModule6.MatQueryКодМатериала.Value;
+  DataModule6.RashodQueryКодКатегории.Value:=DataModule6.MatQueryКодМатериала.Value;
+  DataModule6.RashodQueryКоличество.Value:=1;
+  DataModule6.RashodQuery.Post;
   Form7.Close;
 end;
 

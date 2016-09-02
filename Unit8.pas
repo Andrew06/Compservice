@@ -9,18 +9,17 @@ uses
 
 type
   TForm8 = class(TForm)
-    DBNavigator1: TDBNavigator;
     DBLookupComboBox1: TDBLookupComboBox;
+    DBNavigator1: TDBNavigator;
     Label1: TLabel;
-    DBCtrlGrid1: TDBCtrlGrid;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
-    Label5: TLabel;
     DBMemo1: TDBMemo;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
   private
     { Private declarations }
   public

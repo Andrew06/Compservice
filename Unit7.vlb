@@ -1,19 +1,10 @@
-﻿[DataModule6.ADOTableRabota]
-Coordinates=792,1,195,146
-
-[DataModule6.ADOTableCat]
+﻿[DataModule6.ADOTableCat]
 Coordinates=595,1,174,102
 LayerNames=NewLayer0
 
 [DBLookupComboBox2]
 Coordinates=792,935,144,36
 Visible=True
-
-[DataModule6.ADOTableClient]
-Coordinates=595,551,187,190
-
-[DataModule6.ADOQSumRashod]
-Coordinates=792,391,202,102
 
 [DBMemo1]
 Coordinates=723,946,75,36
@@ -36,12 +27,6 @@ Coordinates=245,626,198,234
 [DataModule6.DSZakaz]
 Coordinates=414,605,147,36
 
-[DataModule6.ADOTableMaster]
-Coordinates=385,463,193,146
-
-[DataModule6.ADOTableVid]
-Coordinates=29,322,173,124
-
 [DBNavigator1]
 Coordinates=157,465,94,58
 
@@ -57,26 +42,11 @@ Coordinates=792,725,130,51
 [DataModule6.DSClient]
 Coordinates=595,729,145,36
 
-[DataModule6.ADOTableMarka]
-Coordinates=178,161,190,124
-
 [DataModule6.DSSumRemont]
 Coordinates=792,567,183,36
 
-[DataModule6.ADOTableTexnika]
-Coordinates=66,626,199,212
-
-[DataModule6.ADOQSumRemont]
-Coordinates=385,375,203,80
-
 [DataModule6.DSTexnika]
 Coordinates=595,355,157,36
-
-[DataModule6.ADOTableMat]
-Coordinates=385,1,175,168
-
-[DataModule6.ADOTableRemont]
-Coordinates=178,285,199,168
 
 [DataModule6.DSMat]
 Coordinates=595,907,133,36
@@ -113,4 +83,7 @@ Coordinates=415,1,149,102
 
 [DataModule6.MatQuery]
 Coordinates=436,1009,151,212
+
+[DataModule6.]
+Coordinates=385,375,203,80
 

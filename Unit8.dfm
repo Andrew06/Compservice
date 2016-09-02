@@ -2,7 +2,7 @@ object Form8: TForm8
   Left = 0
   Top = 0
   Width = 616
-  Height = 389
+  Height = 395
   AutoScroll = True
   AutoSize = True
   Caption = #1056#1077#1084#1086#1085#1090#1085#1099#1077' '#1088#1072#1073#1086#1090#1099
@@ -18,7 +18,7 @@ object Form8: TForm8
   TextHeight = 13
   object Label1: TLabel
     Left = 0
-    Top = 304
+    Top = 311
     Width = 600
     Height = 25
     Alignment = taCenter
@@ -34,17 +34,80 @@ object Form8: TForm8
     ParentFont = False
     Transparent = False
   end
-  object DBNavigator1: TDBNavigator
+  object Label2: TLabel
     Left = 0
-    Top = 257
+    Top = 0
+    Width = 49
+    Height = 18
+    AutoSize = False
+    Caption = #1050#1054#1044
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object Label3: TLabel
+    Left = 49
+    Top = 0
+    Width = 465
+    Height = 18
+    Alignment = taCenter
+    AutoSize = False
+    Caption = #1053#1040#1048#1052#1045#1053#1054#1042#1040#1053#1048#1045' '#1056#1040#1041#1054#1058#1067
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object Label4: TLabel
+    Left = 511
+    Top = 0
+    Width = 89
+    Height = 18
+    Alignment = taCenter
+    AutoSize = False
+    Caption = #1062#1045#1053#1040
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object Label5: TLabel
+    Left = 0
+    Top = 40
     Width = 600
-    Height = 49
-    DataSource = DataModule6.DSRabota
-    TabOrder = 0
+    Height = 18
+    Alignment = taCenter
+    AutoSize = False
+    Caption = #1054#1055#1048#1057#1040#1053#1048#1045
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 0
-    Top = 328
+    Top = 334
     Width = 600
     Height = 23
     Font.Charset = DEFAULT_CHARSET
@@ -56,130 +119,57 @@ object Form8: TForm8
     ListField = #1048#1084#1103#1088#1072#1073#1086#1090#1099
     ListSource = DataModule6.DSRabota
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
   end
-  object DBCtrlGrid1: TDBCtrlGrid
+  object DBEdit1: TDBEdit
     Left = 0
-    Top = 0
-    Width = 600
-    Height = 257
+    Top = 19
+    Width = 49
+    Height = 21
+    BevelOuter = bvRaised
+    BevelKind = bkFlat
+    DataField = #1050#1086#1076#1088#1072#1073#1086#1090#1099
     DataSource = DataModule6.DSRabota
-    PanelHeight = 257
-    PanelWidth = 583
     TabOrder = 2
-    RowCount = 1
-    object Label2: TLabel
-      Left = 0
-      Top = 0
-      Width = 49
-      Height = 17
-      AutoSize = False
-      Caption = #1050#1054#1044
-      Color = clBlack
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-      Transparent = False
-    end
-    object Label3: TLabel
-      Left = 48
-      Top = 0
-      Width = 465
-      Height = 17
-      Alignment = taCenter
-      AutoSize = False
-      Caption = #1053#1040#1048#1052#1045#1053#1054#1042#1040#1053#1048#1045' '#1056#1040#1041#1054#1058#1067
-      Color = clBlack
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-      Transparent = False
-    end
-    object Label4: TLabel
-      Left = 512
-      Top = 0
-      Width = 73
-      Height = 17
-      Alignment = taCenter
-      AutoSize = False
-      Caption = #1062#1045#1053#1040
-      Color = clBlack
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-      Transparent = False
-    end
-    object Label5: TLabel
-      Left = 0
-      Top = 40
-      Width = 584
-      Height = 16
-      Alignment = taCenter
-      AutoSize = False
-      Caption = #1054#1055#1048#1057#1040#1053#1048#1045
-      Color = clBlack
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-      Transparent = False
-    end
-    object DBEdit1: TDBEdit
-      Left = 0
-      Top = 16
-      Width = 42
-      Height = 21
-      BevelOuter = bvRaised
-      BevelKind = bkFlat
-      DataField = #1050#1086#1076#1088#1072#1073#1086#1090#1099
-      DataSource = DataModule6.DSRabota
-      TabOrder = 0
-    end
-    object DBEdit2: TDBEdit
-      Left = 48
-      Top = 16
-      Width = 458
-      Height = 21
-      BevelInner = bvLowered
-      BevelOuter = bvRaised
-      BevelKind = bkFlat
-      DataField = #1048#1084#1103#1088#1072#1073#1086#1090#1099
-      DataSource = DataModule6.DSRabota
-      TabOrder = 1
-    end
-    object DBEdit3: TDBEdit
-      Left = 512
-      Top = 16
-      Width = 72
-      Height = 21
-      BevelKind = bkFlat
-      DataField = #1062#1077#1085#1072#1088#1072#1073#1086#1090#1099
-      DataSource = DataModule6.DSRabota
-      TabOrder = 2
-    end
-    object DBMemo1: TDBMemo
-      Left = 0
-      Top = 56
-      Width = 584
-      Height = 195
-      DataField = #1054#1087#1080#1089#1072#1085#1080#1077
-      DataSource = DataModule6.DSRabota
-      TabOrder = 3
-    end
+  end
+  object DBEdit2: TDBEdit
+    Left = 49
+    Top = 19
+    Width = 465
+    Height = 21
+    BevelInner = bvLowered
+    BevelOuter = bvRaised
+    BevelKind = bkFlat
+    DataField = #1048#1084#1103#1088#1072#1073#1086#1090#1099
+    DataSource = DataModule6.DSRabota
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 511
+    Top = 19
+    Width = 89
+    Height = 21
+    BevelKind = bkFlat
+    DataField = #1062#1077#1085#1072#1088#1072#1073#1086#1090#1099
+    DataSource = DataModule6.DSRabota
+    TabOrder = 4
+  end
+  object DBMemo1: TDBMemo
+    Left = 0
+    Top = 60
+    Width = 600
+    Height = 195
+    DataField = #1054#1087#1080#1089#1072#1085#1080#1077
+    DataSource = DataModule6.DSRabota
+    ScrollBars = ssVertical
+    TabOrder = 5
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 256
+    Width = 600
+    Height = 49
+    DataSource = DataModule6.DSRabota
+    TabOrder = 1
   end
 end

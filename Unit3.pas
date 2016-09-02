@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.ExtCtrls,
-  Vcl.Grids, Vcl.DBGrids, Vcl.Menus, Data.DB;
+  Vcl.Grids, Vcl.DBGrids, Vcl.Menus, Data.DB, Data.SqlTimSt;
 
 type
   TForm3 = class(TForm)
@@ -42,8 +42,8 @@ end;
 
 procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  DataModule6.ADOTableZakaz.Cancel;
-  Datamodule6.ADOTableZakaz.Open;
+  DataModule6.ZakazQuery.Cancel;
+  Datamodule6.ZakazQuery.Open;
   N1.Visible:=False;
 end;
 
@@ -54,10 +54,10 @@ end;
 
 procedure TForm3.N1Click(Sender: TObject);
 begin
-  DataModule6.ADOTableZakazКодМастера.Value:=DataModule6.ADOTableMasterКодМастера.Value;
-  DataModule6.ADOTableZakazДатаЗаказа.Value:=Date();
-  DataModule6.ADOTableZakaz.Post;
-  Datamodule6.ADOTableZakaz.Open;
+  DataModule6.ZakazQueryКодМастера.Value:=DataModule6.MasterQueryКодМастера.Value;
+  DataModule6.ZakazQueryДатаЗаказа.Value:=DateTimeToSQLTimeStamp(Date());
+  DataModule6.ZakazQuery.Post;
+  Datamodule6.ZakazQuery.Open;
   Form3.Close;
 end;
 

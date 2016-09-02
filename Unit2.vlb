@@ -35,17 +35,11 @@ Coordinates=222,432,94,58
 [DataModule6.ADOTableMat]
 Coordinates=406,10,175,168
 
-[DataModule6.ADOQSumRemont]
-Coordinates=614,432,203,58
-
 [DataModule6.ADOTableRemont]
 Coordinates=215,276,199,124
 
 [DataModule6.ADOTableTexnika]
 Coordinates=591,10,199,168
-
-[DataModule6.ADOQSumRashod]
-Coordinates=10,432,202,58
 
 [DataModule6.ADOTableMaster]
 Coordinates=800,10,193,146
@@ -66,4 +60,7 @@ Coordinates=633,574,53,58
 
 []
 Coordinates=827,432,102,36
+
+[DataModule6.]
+Coordinates=614,432,203,58
 

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Buttons,
-  Vcl.DBCtrls, Vcl.ExtCtrls, frxDesgn, frxClass;
+  Vcl.DBCtrls, Vcl.ExtCtrls, Data.SqlTimSt;
 
 type
   TForm10 = class(TForm)
@@ -53,43 +53,43 @@ St1:=DateToStr(DateTimePicker1.Date);
 Datamodule6.WordDocument1.Tables.Item(1).Cell(3,2).Range.InsertBefore(St1);
 St2:=DateToStr(DateTimePicker2.Date);
 Datamodule6.WordDocument1.Tables.Item(1).Cell(4,2).Range.InsertBefore(St2);
-Datamodule6.ADOTableZakaz.Filter:='ДатаЗаказа>='+St1+' AND ДатаЗаказа<='+St2+' AND КодМастера='+IntToStr(Datamodule6.ADOTableMasterКодМастера.Value);
-Datamodule6.ADOTableZakaz.Filtered:=True;
-St1:=string(Datamodule6.ADOTableZakazМастер.Value);
+Datamodule6.ZakazQuery.Filter:='ДатаЗаказа>='+St1+' AND ДатаЗаказа<='+St2+' AND КодМастера='+IntToStr(Datamodule6.MasterQueryКодМастера.Value);
+Datamodule6.ZakazQuery.Filtered:=True;
+St1:=string(Datamodule6.ZakazQueryИмяМастера.Value);
 Datamodule6.WordDocument1.Tables.Item(1).Cell(5,2).Range.InsertBefore(St1);
 i:=1; Sum:=0;
-With Datamodule6.ADOTableZakaz do
+With Datamodule6.ZakazQuery do
 begin
 First;
 while not EOF do
 begin
 St1:=IntToStr(i);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,1).Range.InsertBefore(St1);
-St1:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
+St1:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаЗаказа.Value));
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,2).Range.InsertBefore(St1);
-St1:=string(Datamodule6.ADOTableZakazТехника.Value);
+St1:=string(Datamodule6.ZakazQueryНазвание.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,3).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazНомерТехники.Value;
+St1:=Datamodule6.ZakazQueryНомерТехники.Value;
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,4).Range.InsertBefore(St1);
-St1:=string(Datamodule6.ADOTableZakazКлиент.Value);
+St1:=string(Datamodule6.ZakazQueryНаименование.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,5).Range.InsertBefore(St1);
-if Datamodule6.ADOTableZakazВызов.Value=True then
+if Datamodule6.ZakazQueryВызов.Value=True then
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('ДА')
 else
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,6).Range.InsertBefore('НЕТ');
-St1:=string(Datamodule6.ADOTableZakazМастер.Value);
+St1:=string(Datamodule6.ZakazQueryИмяМастера.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,7).Range.InsertBefore(St1);
-St1:=DateToStr(Datamodule6.ADOTableZakazДатаВыполнения.Value);
+St1:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаВыполнения.Value));
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,8).Range.InsertBefore(St1);
-St1:=Datamodule6.ADOTableZakazОплата.Value;
+St1:=Datamodule6.ZakazQueryОплата.Value;
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,9).Range.InsertBefore(St1);
-if Datamodule6.ADOTableZakazДоставка.Value=True then
+if Datamodule6.ZakazQueryДоставка.Value=True then
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,10).Range.InsertBefore('ДА')
 else
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,10).Range.InsertBefore('НЕТ');
-St1:=floattostr(Datamodule6.ADOTableZakazСумма.Value);
+St1:=floattostr(Datamodule6.ZakazQueryСуммаЗаказа.Value);
 Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,11).Range.InsertBefore(St1);
-Sum:=Sum+Datamodule6.ADOTableZakazСумма.Value;
+Sum:=Sum+Datamodule6.ZakazQueryСуммаЗаказа.Value;
 Datamodule6.WordDocument1.Tables.Item(2).Rows.Add(EmptyParam);
 inc(i);
 Next;
@@ -107,7 +107,7 @@ exit;
 end;
 end;
 Datamodule6.WordApplication1.Disconnect;
-Datamodule6.ADOTableZakaz.Filtered:=False;
+Datamodule6.ZakazQuery.Filtered:=False;
 form10.Close;
 end;
 

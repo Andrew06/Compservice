@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ImgList, Data.DB,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ImgList, Data.DB, Data.SqlTimSt,
   Data.Win.ADODB, IniFiles, Vcl.Mask, System.ImageList, Vcl.ComCtrls,
   System.Win.TaskbarCore, Vcl.Taskbar, Vcl.JumpList;
 
@@ -256,7 +256,7 @@ begin
     with DBGrid1.Canvas do
     begin
       FillRect(Rect);
-      if Datamodule6.ADOTableZakazВызов.Value=True then
+      if Datamodule6.ZakazQueryВызов.Value=True then
         ImageList1.GetBitmap(1,I)
       else
         ImageList1.GetBitmap(0,I);
@@ -268,7 +268,7 @@ begin
     with DBGrid1.Canvas do
     begin
       FillRect(Rect);
-      if Datamodule6.ADOTableZakazДоставка.Value=True then
+      if Datamodule6.ZakazQueryДоставка.Value=True then
         ImageList1.GetBitmap(1,I)
       else
         ImageList1.GetBitmap(0,I);
@@ -280,7 +280,7 @@ begin
     with DBGrid1.Canvas do
     begin
       FillRect(Rect);
-      if Datamodule6.ADOTableZakazВыполнен.Value=True then
+      if Datamodule6.ZakazQueryВыполнен.Value=True then
         ImageList1.GetBitmap(0,I)
       else
         ImageList1.GetBitmap(1,I);
@@ -300,7 +300,7 @@ begin
     with DBGrid2.Canvas do
     begin
       FillRect(Rect);
-      if Datamodule6.ADOTableRemontВыполнена.Value=True then
+      if Datamodule6.RemontQueryВыполнена.Value=True then
         ImageList1.GetBitmap(0,I)
       else
         ImageList1.GetBitmap(1,I);
@@ -311,38 +311,21 @@ end;
 
 procedure TForm1.DBGrid2EditButtonClick(Sender: TObject);
 begin
-  if Datamodule6.ADOTableRemont.RecordCount<>0 then
+  if Datamodule6.RemontQuery.RecordCount<>0 then
   begin
-    Datamodule6.ADOTableRemont.Refresh;
-    Datamodule6.ADOTableRemont.Edit;
-    if Datamodule6.ADOTableRemontВыполнена.Value=False then
-      Datamodule6.ADOTableRemontВыполнена.Value:=True
+    Datamodule6.RemontQuery.Refresh;
+    Datamodule6.RemontQuery.Edit;
+    if Datamodule6.RemontQueryВыполнена.Value=False then
+      Datamodule6.RemontQueryВыполнена.Value:=True
     else
-      Datamodule6.ADOTableRemontВыполнена.Value:=False;
-  Datamodule6.ADOTableRemont.Post;
-  Datamodule6.ADOTableRemont.Refresh;
+      Datamodule6.RemontQueryВыполнена.Value:=False;
+  Datamodule6.RemontQuery.Post;
+  Datamodule6.RemontQuery.Refresh;
   end;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  if Datamodule6.ADOConnection1.Connected then
-    Datamodule6.ADOConnection1.Close;
-  F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
-  DBPath:=f.ReadString('Section_DBPath','Path', '');
-  try
-    if DBPath='' then
-      if Open_DB.Execute then
-        begin
-          DBPath:=ExtractFilePath(Form1.Open_DB.FileName);
-          F.WriteString('Section_DBPath','Path',DBPath);
-          Datamodule6.ADOConnection1.Close;
-          Datamodule6.ADOConnection1.ConnectionString:='Provider=Microsoft.ACE.OLEDB.12.0;Data Source='+DBPath+'Database.accdb;Persist Security Info=False ';
-          Datamodule6.ADOConnection1.Open;
-         end;
-  finally
-    F.Free;
-  end;
   if Datamodule6.FDConnection1.Connected then
     Datamodule6.FDConnection1.Close;
   F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
@@ -374,17 +357,14 @@ begin
   DataModule6.MasterQuery.Open;
   Datamodule6.TexnikaQuery.Active:= true;
   DataModule6.TexnikaQuery.Open;
-//  Datamodule6.ADOTableCat.Active:= true;
-//  Datamodule6.ADOTableMat.Active:= true;
-//  Datamodule6.ADOTableVid.Active:= true;
-//  Datamodule6.ADOTableMarka.Active:= true;
-//  Datamodule6.ADOTableClient.Active:= true;
-  Datamodule6.ADOTableRabota.Active:= true;
-//  Datamodule6.ADOTableMaster.Active:= true;
-//  Datamodule6.ADOTableTexnika.Active:= true;
-  Datamodule6.ADOTableZakaz.Active:= true;
-  Datamodule6.ADOTableRemont.Active:= true;
-  Datamodule6.ADOTableRashod.Active:= true;
+  Datamodule6.ZakazQuery.Active:= true;
+  DataModule6.ZakazQuery.Open;
+  Datamodule6.RemontQuery.Active:= true;
+  DataModule6.RemontQuery.Open;
+  Datamodule6.RashodQuery.Active:= true;
+  DataModule6.RashodQuery.Open;
+  Datamodule6.RabotaQuery.Active:= true;
+  DataModule6.RabotaQuery.Open;
   Timer1.Enabled:= true;
 end;
 
@@ -406,24 +386,24 @@ end;
 
 procedure TForm1.N13Click(Sender: TObject);
 begin
-  Datamodule6.ADOTableZakaz.Edit;
-  if Datamodule6.ADOTableZakazВызов.Value=False then
-    Datamodule6.ADOTableZakazВызов.Value:=True
+  Datamodule6.ZakazQuery.Edit;
+  if Datamodule6.ZakazQueryВызов.Value=False then
+    Datamodule6.ZakazQueryВызов.Value:=True
   else
-    Datamodule6.ADOTableZakazВызов.Value:=False;
-  Datamodule6.ADOTableZakaz.Post;
-  Datamodule6.ADOTableZakaz.Refresh;
+    Datamodule6.ZakazQueryВызов.Value:=False;
+  Datamodule6.ZakazQuery.Post;
+  Datamodule6.ZakazQuery.Refresh;
 end;
 
 procedure TForm1.N14Click(Sender: TObject);
 begin
-  Datamodule6.ADOTableZakaz.Edit;
-  if Datamodule6.ADOTableZakazДоставка.Value=False then
-    Datamodule6.ADOTableZakazДоставка.Value:=True
+  Datamodule6.ZakazQuery.Edit;
+  if Datamodule6.ZakazQueryДоставка.Value=False then
+    Datamodule6.ZakazQueryДоставка.Value:=True
   else
-    Datamodule6.ADOTableZakazДоставка.Value:=False;
-  Datamodule6.ADOTableZakaz.Post;
-  Datamodule6.ADOTableZakaz.Refresh;
+    Datamodule6.ZakazQueryДоставка.Value:=False;
+  Datamodule6.ZakazQuery.Post;
+  Datamodule6.ZakazQuery.Refresh;
 end;
 
 procedure TForm1.N15Click(Sender: TObject);
@@ -434,36 +414,36 @@ begin
   'Для отмены удаления нажмите на кнопку НЕТ.', 'ВНИМАНИЕ',
   MB_YesNo+MB_ICONWARNING+MB_TaskModal) = mrYes Then
     Begin
-      Datamodule6.ADOTableZakaz.Delete;
+      Datamodule6.ZakazQuery.Delete;
     End;
 end;
 
 procedure TForm1.N16Click(Sender: TObject);
 begin
-  Datamodule6.ADOTableZakaz.Edit;
-  if Datamodule6.ADOTableZakazВыполнен.Value=False then
+  Datamodule6.ZakazQuery.Edit;
+  if Datamodule6.ZakazQueryВыполнен.Value=False then
     begin
-      Datamodule6.ADOTableZakazВыполнен.Value:=True;
-      Datamodule6.ADOTableZakazДатаВыполнения.Value:=Date();
+      Datamodule6.ZakazQueryВыполнен.Value:=True;
+      Datamodule6.ZakazQueryДатаВыполнения.Value:=DateTimeToSQLTimeStamp(Date());
     end
   else
     begin
-      Datamodule6.ADOTableZakazВыполнен.Value:=False;
-      Datamodule6.ADOTableZakazДатаВыполнения.Clear;
+      Datamodule6.ZakazQueryВыполнен.Value:=False;
+      Datamodule6.ZakazQueryДатаВыполнения.Clear;
     end;
-  Datamodule6.ADOTableZakaz.Post;
-  Datamodule6.ADOTableZakaz.Refresh;
+  Datamodule6.ZakazQuery.Post;
+  Datamodule6.ZakazQuery.Refresh;
 end;
 
 procedure TForm1.N17Click(Sender: TObject);
 begin
-  Datamodule6.ADOTableZakaz.Edit;
-  if Datamodule6.ADOTableZakazОплата.Value='нал' then
-    Datamodule6.ADOTableZakazОплата.Value:='безнал'
+  Datamodule6.ZakazQuery.Edit;
+  if Datamodule6.ZakazQueryОплата.Value='нал' then
+    Datamodule6.ZakazQueryОплата.Value:='безнал'
   else
-    Datamodule6.ADOTableZakazОплата.Value:='нал';
-  Datamodule6.ADOTableZakaz.Post;
-  Datamodule6.ADOTableZakaz.Refresh;
+    Datamodule6.ZakazQueryОплата.Value:='нал';
+  Datamodule6.ZakazQuery.Post;
+  Datamodule6.ZakazQuery.Refresh;
 end;
 
 procedure TForm1.N20Click(Sender: TObject);
@@ -471,13 +451,13 @@ var
   N, Save: OleVariant;
   St: string;
 begin
-  IF Datamodule6.ADOTableZakazНомерЗаказа.Value=Null Then
+  IF Datamodule6.ZakazQueryНомерЗаказа.Value=Null Then
     begin
       Showmessage('Выберите заказ!');
       Exit;
     end;
   N:=ExtractFilePath(Application.ExeName)+'Doc1.doc';
-  St:=IntToStr(Datamodule6.ADOTableZakazНомерЗаказа.Value);
+  St:=IntToStr(Datamodule6.ZakazQueryНомерЗаказа.Value);
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Справка №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
@@ -487,25 +467,25 @@ begin
     Datamodule6.WordDocument1.ConnectTo(Datamodule6.WordApplication1.ActiveDocument);
     Datamodule6.WordDocument1.SaveAs(Save);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(14,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazКлиент.Value);
+    St:=string(Datamodule6.ZakazQueryНаименование.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(3,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientТелефон.Value);
+    St:=string(Datamodule6.ClientQueryТелефон.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(4,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientФакс.Value);
+    St:=string(Datamodule6.ClientQueryФакс.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(5,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientАдрес.Value);
+    St:=string(Datamodule6.ClientQueryАдрес.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(6,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientEmail.Value);
+    St:=string(Datamodule6.ClientQueryEmail.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(7,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableZakazНомерТехники.Value;
+    St:=Datamodule6.ZakazQueryНомерТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(9,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazТехника.Value);
+    St:=string(Datamodule6.ZakazQueryНазвание.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(10,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMarkaМаркаТехники.Value;
+    St:=Datamodule6.MarkaQueryМаркаТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(11,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableVidВидТехники.Value;
+    St:=Datamodule6.VidQueryВидТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(12,2).Range.InsertBefore(St);
-    St:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
+    St:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаЗаказа.Value));
     Datamodule6.WordDocument1.Tables.Item(1).Cell(15,2).Range.InsertBefore(St);
     Datamodule6.WordApplication1.Visible:=true;
   Except
@@ -523,13 +503,13 @@ var
 N, Save: OleVariant;
 St: string;
 begin
-  IF Datamodule6.ADOTableZakazНомерЗаказа.Value=Null Then
+  IF Datamodule6.ZakazQueryНомерЗаказа.Value=Null Then
     begin
       Showmessage('Выберите заказ!');
       Exit;
     end;
   N:=ExtractFilePath(Application.ExeName)+'Doc2.doc';
-  St:=IntToStr(Datamodule6.ADOTableZakazНомерЗаказа.Value);
+  St:=IntToStr(Datamodule6.ZakazQueryНомерЗаказа.Value);
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Наряд №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
@@ -539,21 +519,21 @@ begin
     Datamodule6.WordDocument1.ConnectTo(Datamodule6.WordApplication1.ActiveDocument);
     Datamodule6.WordDocument1.SaveAs(Save);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(12,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazМастер.Value);
+    St:=string(Datamodule6.ZakazQueryИмяМастера.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(3,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMasterТелефонМастера.Value;
+    St:=Datamodule6.MasterQueryТелефонМастера.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(4,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMasterСертификат.Value;
+    St:=Datamodule6.MasterQueryСертификат.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(5,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableZakazНомерТехники.Value;
+    St:=Datamodule6.ZakazQueryНомерТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(7,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazТехника.Value);
+    St:=string(Datamodule6.ZakazQueryНазвание.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(8,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMarkaМаркаТехники.Value;
+    St:=Datamodule6.MarkaQueryМаркаТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(9,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableVidВидТехники.Value;
+    St:=Datamodule6.VidQueryВидТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(10,2).Range.InsertBefore(St);
-    St:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
+    St:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаЗаказа.Value));
     Datamodule6.WordDocument1.Tables.Item(1).Cell(13,2).Range.InsertBefore(St);
     Datamodule6.WordApplication1.Visible:=true;
   Except
@@ -572,13 +552,13 @@ var
   i: integer;
   St: string;
 begin
-  IF Datamodule6.ADOTableZakazНомерЗаказа.Value=Null Then
+  IF Datamodule6.ZakazQueryНомерЗаказа.Value=Null Then
     begin
     Showmessage('Выберите заказ!');
     Exit;
     end;
   N:=ExtractFilePath(Application.ExeName)+'Doc3.doc';
-  St:=IntToStr(Datamodule6.ADOTableZakazНомерЗаказа.Value);
+  St:=IntToStr(Datamodule6.ZakazQueryНомерЗаказа.Value);
   Save:=ExtractFilePath(Application.ExeName)+'Doc\Акт №'+St+'.doc';
   Datamodule6.WordApplication1.Connect;
   Try
@@ -588,55 +568,55 @@ begin
     Datamodule6.WordDocument1.ConnectTo(Datamodule6.WordApplication1.ActiveDocument);
     Datamodule6.WordDocument1.SaveAs(Save);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(18,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazКлиент.Value);
+    St:=string(Datamodule6.ZakazQueryНаименование.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(3,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientТелефон.Value);
+    St:=string(Datamodule6.ClientQueryТелефон.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(4,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientФакс.Value);
+    St:=string(Datamodule6.ClientQueryФакс.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(5,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientАдрес.Value);
+    St:=string(Datamodule6.ClientQueryАдрес.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(6,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableClientEmail.Value);
+    St:=string(Datamodule6.ClientQueryEmail.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(7,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableZakazНомерТехники.Value;
+    St:=Datamodule6.ZakazQueryНомерТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(9,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazТехника.Value);
+    St:=string(Datamodule6.ZakazQueryНазвание.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(10,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMarkaМаркаТехники.Value;
+    St:=Datamodule6.MarkaQueryМаркаТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(11,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableVidВидТехники.Value;
+    St:=Datamodule6.VidQueryВидТехники.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(12,2).Range.InsertBefore(St);
-    St:=string(Datamodule6.ADOTableZakazМастер.Value);
+    St:=string(Datamodule6.ZakazQueryИмяМастера.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(14,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMasterТелефонМастера.Value;
+    St:=Datamodule6.MasterQueryТелефонМастера.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(15,2).Range.InsertBefore(St);
-    St:=Datamodule6.ADOTableMasterСертификат.Value;
+    St:=Datamodule6.MasterQueryСертификат.Value;
     Datamodule6.WordDocument1.Tables.Item(1).Cell(16,2).Range.InsertBefore(St);
-    St:=DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
+    St:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаЗаказа.Value));
     Datamodule6.WordDocument1.Tables.Item(1).Cell(19,2).Range.InsertBefore(St);
-    St:=DateToStr(Datamodule6.ADOTableZakazДатаВыполнения.Value);
+    St:=DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаВыполнения.Value));
     Datamodule6.WordDocument1.Tables.Item(1).Cell(20,2).Range.InsertBefore(St);
-    if Datamodule6.ADOTableZakazВызов.Value=True then
+    if Datamodule6.ZakazQueryВызов.Value=True then
       Datamodule6.WordDocument1.Tables.Item(1).Cell(21,2).Range.InsertBefore('ДА')
     else
       Datamodule6.WordDocument1.Tables.Item(1).Cell(21,2).Range.InsertBefore('НЕТ');
-    if Datamodule6.ADOTableZakazДоставка.Value=True then
+    if Datamodule6.ZakazQueryДоставка.Value=True then
       Datamodule6.WordDocument1.Tables.Item(1).Cell(22,2).Range.InsertBefore('ДА')
     else
       Datamodule6.WordDocument1.Tables.Item(1).Cell(22,2).Range.InsertBefore('НЕТ');
-    St:=floattostr(Datamodule6.ADOTableZakazСумма.Value);
+    St:=floattostr(Datamodule6.ZakazQueryСуммаЗаказа.Value);
     Datamodule6.WordDocument1.Tables.Item(1).Cell(23,2).Range.InsertBefore(St);
     i:=1;
-    With Datamodule6.ADOTableRemont do
+    With Datamodule6.RemontQuery do
       begin
         First;
         while not EOF do
           begin
             St:=IntToStr(i);
             Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,1).Range.InsertBefore(St);
-            St:=string(Datamodule6.ADOTableRemontРабота.Value);
+            St:=string(Datamodule6.RemontQueryИмяРаботы.Value);
             Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,2).Range.InsertBefore(St);
-            St:=inttostr(Datamodule6.ADOTableRemontЦена.Value);
+            St:=floattostr(Datamodule6.RemontQueryЦенаРаботы.Value);
             Datamodule6.WordDocument1.Tables.Item(2).Cell(2+i,3).Range.InsertBefore(St);
             Datamodule6.WordDocument1.Tables.Item(2).Rows.Add(EmptyParam);
             inc(i);
@@ -645,22 +625,22 @@ begin
       end;
     Datamodule6.WordDocument1.Tables.Item(2).Rows.Item(2+i).Delete;
     i:=1;
-    With Datamodule6.ADOTableRashod do
+    With Datamodule6.RashodQuery do
       begin
         First;
         while not EOF do
           begin
             St:=IntToStr(i);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,1).Range.InsertBefore(St);
-            St:=string(Datamodule6.ADOTableRashodКатегория.Value);
+            St:=string(Datamodule6.RashodQueryНаименование.Value);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,2).Range.InsertBefore(St);
-            St:=string(Datamodule6.ADOTableRashodИмяМатериала.Value);
+            St:=string(Datamodule6.RashodQueryИмяМатериала.Value);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,3).Range.InsertBefore(St);
-            St:=inttostr(Datamodule6.ADOTableRashodЦена.Value);
+            St:=floattostr(Datamodule6.RashodQueryЦена.Value);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,4).Range.InsertBefore(St);
-            St:=IntToStr(Datamodule6.ADOTableRashodКоличество.Value);
+            St:=IntToStr(Datamodule6.RashodQueryКоличество.Value);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,5).Range.InsertBefore(St);
-            St:=inttostr(Datamodule6.ADOTableRashodСумма.Value);
+            St:=currtostr(Datamodule6.RashodQueryСуммаРасхода.Value);
             Datamodule6.WordDocument1.Tables.Item(3).Cell(2+i,6).Range.InsertBefore(St);
             Datamodule6.WordDocument1.Tables.Item(3).Rows.Add(EmptyParam);
             inc(i);
@@ -684,8 +664,8 @@ begin
   Clos;
   N23.Checked:=True;
   BitBtn7.Caption:='ГОТОВ (вкл.)';
-  Datamodule6.ADOTableZakaz.Filter:='Выполнен=True';
-  Datamodule6.ADOTableZakaz.Filtered:=True;
+  Datamodule6.ZakazQuery.Filter:='Выполнен=True';
+  Datamodule6.ZakazQuery.Filtered:=True;
 end;
 
 procedure TForm1.N24Click(Sender: TObject);
@@ -693,8 +673,8 @@ begin
   Clos;
   N24.Checked:=True;
   BitBtn8.Caption:='НЕ ГОТОВ (вкл.)';
-  Datamodule6.ADOTableZakaz.Filter:='Выполнен=False';
-  Datamodule6.ADOTableZakaz.Filtered:=True;
+  Datamodule6.ZakazQuery.Filter:='Выполнен=False';
+  Datamodule6.ZakazQuery.Filtered:=True;
 end;
 
 procedure TForm1.N25Click(Sender: TObject);
@@ -702,16 +682,16 @@ begin
   Clos;
   N25.Checked:=True;
   BitBtn9.Caption:='ДАТА (вкл.)';
-  Datamodule6.ADOTableZakaz.Filter:='ДатаЗаказа='+DateToStr(Datamodule6.ADOTableZakazДатаЗаказа.Value);
-  Datamodule6.ADOTableZakaz.Filtered:=True;
+  Datamodule6.ZakazQuery.Filter:='ДатаЗаказа='+DateTimeToStr(SQLTimeStampToDateTime(Datamodule6.ZakazQueryДатаЗаказа.Value));
+  Datamodule6.ZakazQuery.Filtered:=True;
 end;
 
 procedure TForm1.N26Click(Sender: TObject);
 begin
   Clos;
   N26.Checked:=True;
-  BitBtn10.Caption:='№ТЕХ. (вкл.)'; Datamodule6.ADOTableZakaz.Filter:='НомерТехники='+Chr(39)+Datamodule6.ADOTableZakazНомерТехники.Value+Chr(39);
-  Datamodule6.ADOTableZakaz.Filtered:=True;
+  BitBtn10.Caption:='№ТЕХ. (вкл.)'; Datamodule6.ZakazQuery.Filter:='НомерТехники='+Chr(39)+Datamodule6.ZakazQueryНомерТехники.Value+Chr(39);
+  Datamodule6.ZakazQuery.Filtered:=True;
 end;
 
 procedure TForm1.N27Click(Sender: TObject);
@@ -719,14 +699,14 @@ begin
   Clos;
   N27.Checked:=True;
   BitBtn11.Caption:='МАСТЕР (вкл.)';
-  Datamodule6.ADOTableZakaz.Filter:='КодМастера='+IntToStr(Datamodule6.ADOTableZakazКодМастера.Value);
-  Datamodule6.ADOTableZakaz.Filtered:=True;
+  Datamodule6.ZakazQuery.Filter:='КодМастера='+IntToStr(Datamodule6.ZakazQueryКодМастера.Value);
+  Datamodule6.ZakazQuery.Filtered:=True;
 end;
 
 procedure TForm1.N28Click(Sender: TObject);
 begin
   Clos;
-  Datamodule6.ADOTableZakaz.Filtered:=False;
+  Datamodule6.ZakazQuery.Filtered:=False;
 end;
 
 procedure TForm1.N30Click(Sender: TObject);
@@ -742,7 +722,6 @@ end;
 procedure TForm1.N37Click(Sender: TObject);
 begin
     Datamodule6.FDConnection1.Close;
-    Datamodule6.ADOConnection1.Close;
     Datamodule6.FDMSAccessService1.Database := DBPath+'Database.accdb';
     Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'BD_Backup.accdb';
     Datamodule6.FDMSAccessService1.Compact;
@@ -751,7 +730,6 @@ end;
 procedure TForm1.N38Click(Sender: TObject);
 begin
     Datamodule6.FDConnection1.Close;
-    Datamodule6.ADOConnection1.Close;
     Datamodule6.FDMSAccessService1.Database := DBPath+'BD_Backup.accdb';
     Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'Database.accdb';
     Datamodule6.FDMSAccessService1.Repair;
@@ -794,8 +772,8 @@ end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
-if datamodule6.ADOTableZakaz.Active=false then
-   datamodule6.ADOTableZakaz.Active:=true;
+//if datamodule6.ZakazQuery.Active=false then
+  // datamodule6.ZakazQuery.Active:=true;
    //else
    //timer1.Enabled:=false;
 end;

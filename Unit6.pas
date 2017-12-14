@@ -150,7 +150,7 @@ begin
     fdconnection1.Close;
   F:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'Options.ini');
   DBPath:=f.ReadString('Section_DBPath','Path', '');
-  fdconnection1.ConnectionString:='DriverID=MSAcc; UserName=Admin; Database='+DBPath+'Database.accdb; ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTimeout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes';
+  Fdconnection1.ConnectionString:='DriverID=MSAcc; UserName=Admin; Database='+DBPath+'Database.accdb; ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTimeout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes;StringFormat=Unicode';
 end;
 
 procedure TDataModule6.ADOTableMatAfterInsert(DataSet: TDataSet);

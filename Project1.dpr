@@ -11,7 +11,9 @@ uses
   Unit7 in 'Unit7.pas' {Form7},
   Unit8 in 'Unit8.pas' {Form8},
   Unit9 in 'Unit9.pas' {Form9},
-  Unit10 in 'Unit10.pas' {Form10};
+  Unit10 in 'Unit10.pas' {Form10},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 

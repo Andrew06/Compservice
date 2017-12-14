@@ -337,12 +337,12 @@ begin
           DBPath:=ExtractFilePath(Form1.Open_DB.FileName);
           F.WriteString('Section_DBPath','Path',DBPath);
           Datamodule6.FDConnection1.Close;
-          Datamodule6.fdconnection1.ConnectionString:='DriverID=MSacc; UserName=Admin; Database='+DBPath+'Database.accdb;';
+          Datamodule6.Fdconnection1.ConnectionString:='DriverID=MSAcc; UserName=Admin; Database='+DBPath+'Database.accdb; ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTimeout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes;StringFormat=Unicode';
           Datamodule6.FDConnection1.Open;
          end;
   finally
     F.Free;
- end;
+  end;
   Datamodule6.CatQuery.Active:= true;
   DataModule6.CatQuery.Open;
   Datamodule6.MatQuery.Active:= true;
@@ -721,18 +721,70 @@ end;
 
 procedure TForm1.N37Click(Sender: TObject);
 begin
-    Datamodule6.FDConnection1.Close;
-    Datamodule6.FDMSAccessService1.Database := DBPath+'Database.accdb';
-    Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'BD_Backup.accdb';
-    Datamodule6.FDMSAccessService1.Compact;
+  Datamodule6.FDConnection1.Close;
+  Datamodule6.FDMSAccessService1.Database := DBPath+'Database.accdb';
+  Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'BD_Backup.accdb';
+  Datamodule6.FDMSAccessService1.Compact;
+  Datamodule6.FDConnection1.Open;
+  Datamodule6.CatQuery.Active:= true;
+  DataModule6.CatQuery.Open;
+  Datamodule6.MatQuery.Active:= true;
+  DataModule6.MatQuery.Open;
+  Datamodule6.MarkaQuery.Active:= true;
+  DataModule6.MarkaQuery.Open;
+  Datamodule6.VidQuery.Active:= true;
+  DataModule6.VidQuery.Open;
+  Datamodule6.ClientQuery.Active:= true;
+  DataModule6.ClientQuery.Open;
+  Datamodule6.MasterQuery.Active:= true;
+  DataModule6.MasterQuery.Open;
+  Datamodule6.TexnikaQuery.Active:= true;
+  DataModule6.TexnikaQuery.Open;
+  Datamodule6.ZakazQuery.Active:= true;
+  DataModule6.ZakazQuery.Open;
+  Datamodule6.RemontQuery.Active:= true;
+  DataModule6.RemontQuery.Open;
+  Datamodule6.RashodQuery.Active:= true;
+  DataModule6.RashodQuery.Open;
+  Datamodule6.RabotaQuery.Active:= true;
+  DataModule6.RabotaQuery.Open;
 end;
 
 procedure TForm1.N38Click(Sender: TObject);
 begin
+  try
     Datamodule6.FDConnection1.Close;
     Datamodule6.FDMSAccessService1.Database := DBPath+'BD_Backup.accdb';
     Datamodule6.FDMSAccessService1.DestDatabase := DBPath+'Database.accdb';
     Datamodule6.FDMSAccessService1.Repair;
+  except
+    on E : Exception do
+      if E.ClassName='EMSAccessNativeException' then
+        Showmessage('Файл для восстановления отсутствует');
+  end;
+  Datamodule6.FDConnection1.Open;
+  Datamodule6.CatQuery.Active:= true;
+  DataModule6.CatQuery.Open;
+  Datamodule6.MatQuery.Active:= true;
+  DataModule6.MatQuery.Open;
+  Datamodule6.MarkaQuery.Active:= true;
+  DataModule6.MarkaQuery.Open;
+  Datamodule6.VidQuery.Active:= true;
+  DataModule6.VidQuery.Open;
+  Datamodule6.ClientQuery.Active:= true;
+  DataModule6.ClientQuery.Open;
+  Datamodule6.MasterQuery.Active:= true;
+  DataModule6.MasterQuery.Open;
+  Datamodule6.TexnikaQuery.Active:= true;
+  DataModule6.TexnikaQuery.Open;
+  Datamodule6.ZakazQuery.Active:= true;
+  DataModule6.ZakazQuery.Open;
+  Datamodule6.RemontQuery.Active:= true;
+  DataModule6.RemontQuery.Open;
+  Datamodule6.RashodQuery.Active:= true;
+  DataModule6.RashodQuery.Open;
+  Datamodule6.RabotaQuery.Active:= true;
+  DataModule6.RabotaQuery.Open;
 end;
 
 procedure TForm1.N4Click(Sender: TObject);

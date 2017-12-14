@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Width = 1020
+  Width = 1023
   Height = 725
   AutoScroll = True
   AutoSize = True
@@ -20,17 +20,17 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 199
+    Left = 192
     Top = 0
-    Width = 805
-    Height = 18
+    Width = 815
+    Height = 24
     Alignment = taCenter
     AutoSize = False
     Caption = #1047#1072#1082#1072#1079#1099
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -21
+    Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentFont = False
   end
@@ -38,49 +38,49 @@ object Form1: TForm1
     Left = 0
     Top = 0
     Width = 193
-    Height = 18
+    Height = 24
     Alignment = taCenter
     AutoSize = False
     Caption = #1047#1040#1050#1040#1047#1067
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
   end
   object Label3: TLabel
     Left = 0
     Top = 255
-    Width = 193
+    Width = 202
     Height = 21
     Alignment = taCenter
     AutoSize = False
     Caption = #1060#1048#1051#1068#1058#1056#1067' '#1047#1040#1050#1040#1047#1054#1042
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
   end
   object Label4: TLabel
     Left = 0
     Top = 510
-    Width = 193
+    Width = 202
     Height = 23
     Alignment = taCenter
     AutoSize = False
     Caption = #1044#1054#1050#1059#1052#1045#1053#1058#1067
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 199
+    Left = 202
     Top = 399
     Width = 346
     Height = 204
@@ -90,39 +90,46 @@ object Form1: TForm1
     Color = clMoneyGreen
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
     Transparent = False
   end
   object Label6: TLabel
-    Left = 545
+    Left = 548
     Top = 399
     Width = 459
     Height = 207
+    Alignment = taCenter
     AutoSize = False
     Caption = #1050#1054#1052#1055#1051#1045#1050#1058#1059#1070#1065#1048#1045' '#1048' '#1056#1040#1057#1061#1054#1044#1053#1067#1045' '#1052#1040#1058#1045#1056#1048#1040#1051#1067
     Color = clMoneyGreen
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
     Transparent = False
   end
   object GroupBox1: TGroupBox
-    Left = 199
+    Left = 202
     Top = 604
     Width = 350
     Height = 38
     Caption = #1057#1059#1052#1052#1040' '#1056#1045#1052#1054#1053#1058#1053#1067#1061' '#1056#1040#1041#1054#1058
     Color = clMoneyGreen
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     ParentBackground = False
     ParentColor = False
+    ParentFont = False
     TabOrder = 21
     object DBText1: TDBText
       Left = 224
@@ -134,19 +141,26 @@ object Form1: TForm1
     end
   end
   object DBGrid1: TDBGrid
-    Left = 199
+    Left = 202
     Top = 24
     Width = 805
     Height = 336
     Color = clSkyBlue
     DataSource = DataModule6.DSZakaz
     DrawingStyle = gdsClassic
+    FixedColor = clInactiveCaption
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -13
+    TitleFont.Name = 'Times New Roman'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
     Columns = <
@@ -208,33 +222,33 @@ object Form1: TForm1
         Expanded = False
         FieldName = #1044#1072#1090#1072#1042#1099#1087#1086#1083#1085#1077#1085#1080#1103
         Title.Caption = #1044#1040#1058#1040
-        Width = 100
+        Width = 90
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1054#1087#1083#1072#1090#1072
         Title.Caption = #1054#1055#1051#1040#1058#1040
-        Width = 50
+        Width = 60
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1044#1086#1089#1090#1072#1074#1082#1072
         Title.Caption = #1044#1054#1057#1058#1040#1042#1050#1040
-        Width = 64
+        Width = 76
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1057#1091#1084#1084#1072#1047#1072#1082#1072#1079#1072
-        Title.Caption = #1057#1091#1084#1084#1072' '#1047#1072#1082#1072#1079#1072
+        Title.Caption = #1057#1059#1052#1052#1040' '#1047#1040#1050#1040#1047#1040
         Width = 64
         Visible = True
       end>
   end
   object DBNavigator1: TDBNavigator
-    Left = 199
+    Left = 202
     Top = 358
     Width = 805
     Height = 41
@@ -243,18 +257,25 @@ object Form1: TForm1
     TabOrder = 1
   end
   object DBGrid2: TDBGrid
-    Left = 199
+    Left = 202
     Top = 418
     Width = 346
     Height = 146
     Color = clMoneyGreen
     DataSource = DataModule6.DSRemont
     DrawingStyle = gdsClassic
+    FixedColor = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -13
+    TitleFont.Name = 'Times New Roman'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid2DrawColumnCell
     OnEditButtonClick = DBGrid2EditButtonClick
@@ -272,36 +293,45 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = #1048#1084#1103#1056#1072#1073#1086#1090#1099
-        Width = 100
+        Title.Caption = #1056#1040#1041#1054#1058#1040
+        Width = 190
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1062#1077#1085#1072#1056#1072#1073#1086#1090#1099
+        Title.Caption = #1062#1045#1053#1040
         Visible = True
       end
       item
         ButtonStyle = cbsEllipsis
         Expanded = False
         FieldName = #1042#1099#1087#1086#1083#1085#1077#1085#1072
-        Width = 64
+        Title.Caption = #1057#1058#1040#1058#1059#1057
         Visible = True
       end>
   end
   object DBGrid3: TDBGrid
-    Left = 545
+    Left = 548
     Top = 418
     Width = 459
     Height = 146
     Color = clMoneyGreen
     DataSource = DataModule6.DSRashod
     DrawingStyle = gdsClassic
+    FixedColor = clActiveBorder
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -13
+    TitleFont.Name = 'Times New Roman'
     TitleFont.Style = []
     Columns = <
       item
@@ -317,34 +347,38 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+        Title.Caption = #1050#1040#1058#1045#1043#1054#1056#1048#1071
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1048#1084#1103#1052#1072#1090#1077#1088#1080#1072#1083#1072
-        Title.Caption = #1052#1072#1090#1077#1088#1080#1072#1083
+        Title.Caption = #1052#1040#1058#1045#1056#1048#1040#1051
         Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086
+        Title.Caption = #1050#1054#1051#1048#1063#1045#1057#1058#1042#1054
+        Width = 64
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1062#1077#1085#1072
+        Title.Caption = #1062#1045#1053#1040
         Visible = True
       end
       item
         Expanded = False
         FieldName = #1057#1091#1084#1084#1072#1056#1072#1089#1093#1086#1076#1072
-        Width = 64
+        Title.Caption = #1057#1059#1052#1052#1040
         Visible = True
       end>
   end
   object DBNavigator3: TDBNavigator
-    Left = 545
+    Left = 548
     Top = 570
     Width = 370
     Height = 34
@@ -352,179 +386,284 @@ object Form1: TForm1
     TabOrder = 5
   end
   object BitBtn1: TBitBtn
-    Left = 0
+    Left = 3
     Top = 24
     Width = 193
     Height = 33
     Caption = #1044#1054#1041#1040#1042#1048#1058#1068' '#1047#1040#1050#1040#1047
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkOK
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 6
     OnClick = BitBtn1Click
   end
   object BitBtn2: TBitBtn
-    Left = 0
+    Left = 3
     Top = 63
     Width = 193
     Height = 33
     Caption = #1042#1067#1047#1054#1042' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkOK
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 7
     OnClick = BitBtn2Click
   end
   object BitBtn3: TBitBtn
-    Left = 0
+    Left = 3
     Top = 102
     Width = 193
     Height = 33
     Caption = #1044#1054#1057#1058#1040#1042#1050#1040' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkOK
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 8
     OnClick = BitBtn3Click
   end
   object BitBtn4: TBitBtn
-    Left = 0
+    Left = 3
     Top = 141
     Width = 193
     Height = 33
     Caption = #1043#1054#1058#1054#1042' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkOK
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 9
     OnClick = BitBtn4Click
   end
   object BitBtn5: TBitBtn
-    Left = 0
+    Left = 3
     Top = 180
     Width = 193
     Height = 33
     Caption = #1053#1040#1051'. ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkOK
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 10
     OnClick = BitBtn5Click
   end
   object BitBtn6: TBitBtn
-    Left = 0
+    Left = 3
     Top = 219
     Width = 193
     Height = 33
     Caption = #1059#1044#1040#1051#1048#1058#1068' '#1047#1040#1050#1040#1047
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkCancel
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 11
     OnClick = BitBtn6Click
   end
   object BitBtn7: TBitBtn
-    Left = 0
+    Left = 3
     Top = 280
     Width = 193
     Height = 33
+    Hint = #1060#1080#1083#1100#1090#1088' '#1087#1086' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080' '#1079#1072#1082#1072#1079#1072
     Caption = #1043#1054#1058#1054#1042' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkIgnore
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 12
     OnClick = BitBtn7Click
   end
   object BitBtn8: TBitBtn
-    Left = 0
+    Left = 3
     Top = 319
     Width = 193
     Height = 33
+    Hint = #1060#1080#1083#1100#1090#1088' '#1087#1086' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080' '#1079#1072#1082#1072#1079#1072
     Caption = #1053#1045' '#1043#1054#1058#1054#1042' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkIgnore
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 13
     OnClick = BitBtn8Click
   end
   object BitBtn9: TBitBtn
-    Left = 0
+    Left = 3
     Top = 358
     Width = 193
     Height = 33
+    Hint = #1060#1080#1083#1100#1090#1088' '#1087#1086' '#1076#1072#1090#1077
     Caption = #1044#1040#1058#1040' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkIgnore
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 14
     OnClick = BitBtn9Click
   end
   object BitBtn10: TBitBtn
-    Left = 0
+    Left = 3
     Top = 397
     Width = 193
     Height = 33
+    Hint = #1092#1080#1083#1100#1090#1088' '#1087#1086' '#8470' '#1090#1077#1093#1085#1080#1082#1080
     Caption = #8470' '#1058#1045#1061'. ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkIgnore
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 15
     OnClick = BitBtn10Click
   end
   object BitBtn11: TBitBtn
-    Left = 0
+    Left = 3
     Top = 436
     Width = 193
     Height = 33
+    Hint = #1060#1080#1083#1100#1090#1088' '#1087#1086' '#1084#1072#1089#1090#1077#1088#1091
     Caption = #1052#1040#1057#1058#1045#1056' ('#1086#1090#1082#1083'.)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkIgnore
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 16
     OnClick = BitBtn11Click
   end
   object BitBtn12: TBitBtn
-    Left = 0
+    Left = 3
     Top = 475
     Width = 193
     Height = 33
+    Hint = #1057#1073#1088#1086#1089' '#1092#1080#1083#1100#1090#1088#1086#1074
     Caption = #1057#1041#1056#1054#1057' '#1060#1048#1051#1068#1058#1056#1054#1042
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkCancel
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 17
     OnClick = BitBtn12Click
   end
   object BitBtn13: TBitBtn
-    Left = 0
+    Left = 3
     Top = 531
     Width = 193
     Height = 33
+    Hint = #1057#1087#1088#1072#1074#1082#1072' '#1086' '#1087#1088#1080#1077#1084#1077' '#1090#1077#1093#1085#1080#1082#1080' '#1074' '#1088#1077#1084#1086#1085#1090
     Caption = #1057#1055#1056#1040#1042#1050#1040
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkRetry
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 18
     OnClick = BitBtn13Click
   end
   object BitBtn14: TBitBtn
-    Left = 0
+    Left = 3
     Top = 570
     Width = 193
     Height = 33
+    Hint = #1053#1072#1088#1103#1076' '#1085#1072' '#1088#1077#1084#1086#1085#1090#1085#1099#1077' '#1088#1072#1073#1086#1090#1099
     Caption = #1053#1040#1056#1071#1044
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkRetry
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 19
     OnClick = BitBtn14Click
   end
   object BitBtn15: TBitBtn
-    Left = 0
+    Left = 3
     Top = 609
     Width = 193
     Height = 33
+    Hint = #1040#1082#1090' '#1074#1099#1087#1086#1083#1085#1077#1085#1085#1099#1093' '#1088#1072#1073#1086#1090
     Caption = #1040#1050#1058' '#1042#1067#1055'. '#1056#1040#1041#1054#1058
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     Kind = bkRetry
     NumGlyphs = 2
+    ParentFont = False
     TabOrder = 20
     OnClick = BitBtn15Click
   end
   object GroupBox2: TGroupBox
-    Left = 545
+    Left = 548
     Top = 604
     Width = 459
     Height = 38
     Caption = #1057#1059#1052#1052#1040' '#1052#1040#1058#1045#1056#1048#1040#1051#1054#1042
     Color = clMoneyGreen
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
     ParentBackground = False
     ParentColor = False
+    ParentFont = False
     TabOrder = 22
     object DBText2: TDBText
       Left = 344
@@ -536,7 +675,7 @@ object Form1: TForm1
     end
   end
   object DBNavigator2: TDBNavigator
-    Left = 199
+    Left = 202
     Top = 570
     Width = 340
     Height = 34
@@ -546,13 +685,13 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Top = 642
-    Width = 1004
+    Width = 1007
     Height = 25
     AutoHint = True
     BorderWidth = 1
     Panels = <
       item
-        Width = 810
+        Width = 900
       end
       item
         Alignment = taRightJustify
@@ -1008,7 +1147,7 @@ object Form1: TForm1
   object ImageList1: TImageList
     Left = 400
     Bitmap = {
-      494C010102000800B00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800C40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       000000000000000000000000000000000000FFFFFFFFFFFFFFFF000000FF0000
       00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000

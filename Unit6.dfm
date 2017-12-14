@@ -90,8 +90,8 @@
       
         'ODBCAdvanced=DriverId=25;MaxBufferSize=2048;MaxScanRows=8;PageTi' +
         'meout=5;SafeTransactions=0;Threads=3;UserCommitSync=Yes'
-      'StringFormat=Unicode'
-      'DriverID=MSAcc')
+      'DriverID=MSAcc'
+      'StringFormat=Unicode')
     Connected = True
     LoginDialog = FDGUIxLoginDialog1
     LoginPrompt = False
